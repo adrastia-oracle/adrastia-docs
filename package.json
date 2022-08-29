@@ -6,17 +6,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "@markdoc/markdoc": "latest",
-    "@markdoc/next.js": "latest",
-    "next": "latest",
-    "prismjs": "^1.28.0",
-    "react": "latest",
-    "react-dom": "latest"
+    "@markdoc/markdoc": "0.1.6",
+    "@markdoc/next.js": "0.1.6",
+    "next": "12.2.5",
+    "prismjs": "^1.29.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "typescript": "latest"
+    "@types/node": "18.7.14",
+    "@types/react": "18.0.17",
+    "@types/react-dom": "18.0.6",
+    "typescript": "4.8.2"
   }
 }
