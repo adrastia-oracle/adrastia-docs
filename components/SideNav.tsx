@@ -4,8 +4,94 @@ import Link from 'next/link';
 
 const items = [
   {
-    title: 'Get started',
-    links: [{href: '/docs', children: 'Overview'}],
+    title: 'Welcome',
+    links: [
+      {
+        href: '/',
+        children: 'Overview'
+      },
+    ],
+  },
+  {
+    title: 'Fundamentals',
+    links: [
+      {
+        href: '/fundamentals/motivation',
+        children: 'Motivation'
+      },
+      {
+        href: '/fundamentals/economics',
+        children: 'Economics'
+      },
+      {
+        href: '/fundamentals/roadmap',
+        children: 'Roadmap'
+      }
+    ],
+  },
+  {
+    title: 'Structure',
+    links: [
+      {
+        href: '/structure/contracts',
+        children: 'Contracts'
+      },
+      {
+        href: '/structure/updaters',
+        children: 'Updaters'
+      }
+    ],
+  },
+  {
+    title: 'Deployments',
+    links: [
+      {
+        href: '/deployments/arbitrum',
+        children: 'Arbitrum'
+      },
+      {
+        href: '/deployments/ethereum',
+        children: 'Ethereum'
+      },
+      {
+        href: '/deployments/optimism',
+        children: 'Optimism'
+      },
+      {
+        href: '/deployments/polygon',
+        children: 'Polygon'
+      }
+    ],
+  },
+  {
+    title: 'Security',
+    links: [
+      {
+        href: '/security/attack-vectors',
+        children: 'Attack vectors'
+      },
+      {
+        href: '/security/disclosures',
+        children: 'Disclosures'
+      },
+    ],
+  },
+  {
+    title: 'Price feeds',
+    links: [
+      {
+        href: '/price-feeds/sponsoring',
+        children: 'Sponsoring'
+      },
+      {
+        href: '/price-feeds/launching',
+        children: 'Launching'
+      },
+      {
+        href: '/price-feeds/consuming',
+        children: 'Consuming'
+      }
+    ],
   },
 ];
 
@@ -53,6 +139,9 @@ export function SideNav() {
           li {
             list-style: none;
             margin: 0;
+            padding-left: 16px;
+            padding-bottom: 16px;
+            font-weight: 300;
           }
           li a {
             text-decoration: none;

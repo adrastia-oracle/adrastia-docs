@@ -60,16 +60,16 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{title + " | Adrastia Docs"}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="referrer" content="strict-origin" />
-        <meta name="title" content={title} />
+        <meta name="title" content={title + " | Adrastia Docs"} />
         <meta name="description" content={description} />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopNav>
-        <Link href="/docs">Docs</Link>
+        
       </TopNav>
       <div className="page">
         <SideNav />
