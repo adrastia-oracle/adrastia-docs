@@ -35,6 +35,9 @@ Configured to provide very high precision prices for stablecoins denominated in 
 - Feed: **FRAX/USDC**
   - Primary: 0x11AE2FD9Ab55063FD039B6396C628a7EadC8214f
   - Secondary: 0xcE690B5db91979c2BDe060ba46C9a39818538A9a
+- All feeds
+  - Tertiary: 0xaa32c429b6051aad41c8c172edbffe0922fef82c
+  - Quaternary: 0x9f323d3279c3a9f8d82fc0361200de39f6127f49
 
 ### Large-Cap Oracle (WETH)
 
@@ -62,3 +65,6 @@ Configured to provide high precision prices for highly liquid assets denominated
 - Feed: **WMATIC/WETH**
   - Primary: 0x253EE59e957cC7412379eE2E091d247bE9c99daA
   - Secondary: 0x681baAB2545D106F3B8B87D403e221d717871dCe
+- All feeds
+  - Tertiary: 0xaa32c429b6051aad41c8c172edbffe0922fef82c
+  - Quaternary: 0x9f323d3279c3a9f8d82fc0361200de39f6127f49

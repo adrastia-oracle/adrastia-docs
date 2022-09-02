@@ -24,3 +24,6 @@ Configured to provide high precision prices for highly liquid assets denominated
 - Feed: **USDC/WETH**
   - Primary: 0x9b39d511dca866bfb8d8e6132fc0ef02d26ce8d1
   - Secondary: 0x97944B231F42D9C0243e774c024fA89BDD31Ee07
+- All feeds
+  - Tertiary: 0x85820a556061e045c349a3f7a3ffc1271342e98d
+  - Quaternary: 0x28c282208c5f9343823fafce45ae01dd3c7bc4d9
