@@ -33,3 +33,8 @@ h2 {
 a {
   color: rgba(75, 85, 99, 1);
 }
+
+li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
