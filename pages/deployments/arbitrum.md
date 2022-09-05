@@ -16,6 +16,9 @@ Configured to provide high precision prices for highly liquid assets denominated
 - Update thresholds (% change):
   - Price: 0.5%
   - Liquidity: 10%
+- Required liquidity for each underlying oracle:
+  - Token liquidity value: 5 WETH
+  - Quote token liquidity: 5 WETH
 - Underlying oracles:
   - Sushiswap Oracle (WETH): 0x0D11468cA479FE165ec8aDF768Fde690a6C6973E
   - Uniswap v3 Oracle (WETH): 0x056a7d17141F9138AA028C27EE592A488d97F99C

@@ -16,6 +16,9 @@ Configured to provide very high precision prices for stablecoins denominated in 
 - Update thresholds (% change):
   - Price: 0.1%
   - Liquidity: 10%
+- Required liquidity for each underlying oracle:
+  - Token liquidity value: 10,000 USDC
+  - Quote token liquidity: 10,000 USDC
 - Underlying oracles:
   - Quickswap Oracle (USDC): 0x66244d50b8802b189F9Df035d5fF0608a08043b6
   - Sushiswap Oracle (USDC): 0x13c0Ce7fEcCa7146b9031fc70688bEc81233f40A
@@ -49,6 +52,9 @@ Configured to provide high precision prices for highly liquid assets denominated
 - Update thresholds (% change):
   - Price: 0.5%
   - Liquidity: 10%
+- Required liquidity for each underlying oracle:
+  - Token liquidity value: 5 WETH
+  - Quote token liquidity: 5 WETH
 - Underlying oracles:
   - Quickswap Oracle (WETH): 0x5C7F76849f65F1D3f5b5Dc328488348FB6828C69
   - Sushiswap Oracle (WETH): 0x2CF1898C6c7b4EAa47B7b0916CDAbA09278Ff865

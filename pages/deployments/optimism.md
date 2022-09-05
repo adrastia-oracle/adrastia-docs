@@ -16,6 +16,9 @@ Configured to provide high precision prices for highly liquid assets denominated
 - Update thresholds (% change):
   - Price: 0.5%
   - Liquidity: 10%
+- Required liquidity for each underlying oracle:
+  - Token liquidity value: 5 WETH
+  - Quote token liquidity: 5 WETH
 - Underlying oracles:
   - Uniswap v3 Oracle (WETH): 0x1D8B85D36189cAB860F6E45F7835355ee9E0A391
     - 0.3% fee tier
