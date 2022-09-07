@@ -69,7 +69,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopNav>
-        
+        <a href="https://github.com/adrastia-oracle/" target="_blank">GitHub</a>
       </TopNav>
       <div className="page">
         <SideNav />
