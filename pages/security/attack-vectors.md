@@ -25,7 +25,9 @@ The more liquidity in the pool, the more it costs to move the price. At the time
 Arbitrageurs provide security by fixing any price discrepancies for a profit.
 {% /callout %}
 
-There's a very high chance that an arbitrage (more generally, MEV) bot will buy the cheap ETH (or other token) and sell it to other pools, DEXs, CEXs, etc. for a profit. This will happen immediately after our swap transaction as many bots compete for easy money like this. As a result, our update transaction to the price accumulator won't see the manipulated price.
+There's a very high chance that an arbitrage (more generally, MEV) bot will buy the cheap ETH (or other token) and sell it to other pools, DEXs, CEXs, etc. for a profit. This will happen likely immediately after our swap transaction as many bots compete for easy money like this. As a result, our update transaction to the price accumulator won't see the manipulated price.
+
+Note: High gas prices can possibly make it unprofitable for arbitrage bots to fix the price. The lower the liquidity, the more likely it is for this to occur. We continue with our attack plan as if this isn't the case as we have protections from this explained below.
 
 There are two ways to prevent arbitragers from foiling our attack:
 1. Smart contracts: Carry out the attack in a single transaction with a smart contract.
@@ -75,6 +77,18 @@ To further mitigate attacks, our updater bots consult off-chain prices before su
 {% callout %}
 Update transactions are submitted **only if** on-chain prices closely match off-chain prices.
 {% /callout %}
+
+#### Minimum liquidity levels
+
+We assume that arbitrageurs will fix manipulated prices, but this will likely only occur if it's profitable to do so. The less liquidity in the pool/DEX, the more likely that it will be unprofitable to perform arbitrage, especially during gas spikes.
+
+To ensure that it's profitable to perform arbitrage to fix manipulated prices, even during gas spikes, we require minimum liquidity levels at the aggregator level.
+
+{% callout %}
+Pools with insufficient liquidity levels will be excluded from aggregation to prevent situations where unprofitable arbitrage opportunities prevent accurate pricing.
+{% /callout %}
+
+Please visit the deployments pages for the minimum liquidity levels required by each of our aggregators.
 
 ### Further reading and resources
 
