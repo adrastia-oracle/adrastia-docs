@@ -13,8 +13,8 @@ import '../public/globals.css'
 
 import type { AppProps } from 'next/app'
 
-const TITLE = 'Markdoc';
-const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework';
+const TITLE = 'Adrastia Docs';
+const DESCRIPTION = 'Documentation for Adrastia smart contract oracles.';
 
 function collectHeadings(node, sections = []) {
   if (node) {
