@@ -65,7 +65,7 @@ The presence of at least one honest updater amplifies the cost of attack.
 It's possible to front-run accumulator update transactions so that manipulated data is observed and stored by our smart contracts. We prevent this by performing on-chain validation. Our updater bots read the pool/DEX values (whether price or liquidity) of the latest valid block, and include this in the update transaction data. Updates are only performed if the values at the time of execution match the values provided as of at least one block prior. This ensures it's not possible to front-run our accumulator update transactions.
 
 {% callout %}
-Accumulator update transactions validate that the data being recorded holds for at least two blocks.
+Accumulator update transactions validate that the data being recorded holds for at least one block.
 {% /callout %}
 
 #### Off-chain validation
