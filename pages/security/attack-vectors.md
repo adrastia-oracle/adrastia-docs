@@ -1,5 +1,6 @@
 ---
 title: Attack Vectors
+description: Learn how to mitigate Adrastia oracle attacks.
 ---
 
 # {% $markdoc.frontmatter.title %}
