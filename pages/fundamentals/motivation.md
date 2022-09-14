@@ -3,3 +3,23 @@ title: Motivation
 ---
 
 # {% $markdoc.frontmatter.title %}
+
+## Background
+
+Secure and reliable price feeds are crucial in building safe Decentralized Finance ([DeFi](https://ethereum.org/en/defi/)) applications. Price feeds protect tens of billions of dollars worth of assets in lending/borrowing applications, synthetic assets, and many other DeFi applications. These fully automatic applications require no human intervention, which places significant responsibility on the price feeds. If the price feeds are incorrect, even just for a second, users could lose their funds without notice.
+
+At the time of writing, there is [$27B](https://defillama.com/oracles) worth of assets secured by [oracles](https://ethereum.org/en/developers/docs/oracles/) providing these price feeds. Chainlink provides price feeds for just about half of these assets. [Maker](https://makerdao.com/en/) runs their in-house oracle contracts for a quarter of these assets. Other oracles secure the remaining assets, with no clear winner. DeFi applications lack options for price feeds, and without the expertise to run in-house oracle contracts, they have only one clear choice: Chainlink. While Chainlink has done a great job of providing price feeds, they are not without their flaws. It's critical to have options.
+
+## The start of Adrastia
+
+The idea of Adrastia came about in May 2021 when TylerEther (Tyler Loewen) was working on expanding [Compound](https://compound.finance/)'s market listings. The original idea was to enable [isolated markets with permissionless listing](https://www.comp.xyz/t/permissionless-listing-isolated-markets/1794), similar to [Rari Fuse](https://medium.com/rari-capital/fuse-explained-3ef2e0747953). The first requirement to build this is to have secure and reliable price feeds that can be easily and quickly started and maintained by anyone for any asset (within reason). Adrastia was born in July 2021 to meet this need.
+
+## The goal of Adrastia
+
+The ultimate goal of Adrastia is to provide a decentralized and permissionless oracle network that is secure, reliable, and easy to use. Anyone should be able to start a price feed for any asset by simply sending a transaction, provided there is enough decentralized exchange (DEX) liquidity. Merely send the chain's gas token to an Adrastia contract, and a network of updater bots will start providing price feeds for that asset.
+
+## The future is on-chain
+
+Today's oracles work by posting off-chain data to a smart contract. Using off-chain data requires a significant amount of trust in the price feed maintainers as they can freely provide incorrect data, intentionally or unintentionally. Why should DeFi applications rely on off-chain data when the data is already available on-chain?
+
+By aggregating on-chain data, Adrastia provides much more secure price feeds. Price manipulation at the top DEXs would have to occur over a long period for an incorrect price to be reported. Manipulating DEX prices is much more costly and challenging than simply posting erroneous off-chain data to a smart contract.
