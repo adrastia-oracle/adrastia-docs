@@ -13,6 +13,7 @@ import 'prismjs/themes/prism.min.css';
 import '../public/globals.css'
 
 import type { AppProps } from 'next/app'
+import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 
 const TITLE = 'Adrastia Docs';
 const DESCRIPTION = 'Documentation for Adrastia smart contract oracles.';
@@ -40,7 +41,9 @@ function collectHeadings(node, sections = []) {
   return sections;
 }
 
-export default function MyApp({ Component, pageProps }: AppProps) {
+export type MyAppProps = MarkdocNextJsPageProps
+
+export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
   const { markdoc } = pageProps;
 
   let title = TITLE;
