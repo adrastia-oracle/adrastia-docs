@@ -84,10 +84,6 @@ const items = [
         children: 'Sponsoring'
       },
       {
-        href: '/price-feeds/launching',
-        children: 'Launching'
-      },
-      {
         href: '/price-feeds/consuming',
         children: 'Consuming'
       }
