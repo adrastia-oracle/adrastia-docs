@@ -71,6 +71,21 @@ Configured to provide high precision prices for highly liquid assets denominated
 - Feed: **WMATIC/WETH**
   - Primary: 0x253EE59e957cC7412379eE2E091d247bE9c99daA
   - Secondary: 0x681baAB2545D106F3B8B87D403e221d717871dCe
+- Feed: **COMP/WETH**
+  - Primary: 0xD755d4f60bcA0dCFe974d208814261cdc1AFAdC2
+  - Secondary: 0x2161cB0F6F6Ca74aC27815F0EBad430Bd128Cc61
+- Feed: **AAVE/WETH**
+  - Primary: 0x016BbA3EDBBc48713e1Cfab40419dDC3EB7C0C6d
+  - Secondary: 0x632081c114c5DbDc795213586B006aC67dADF066
+- Feed: **CRV/WETH**
+  - Primary: 0x0dE7FD1bA7013eedABba149E55c4432Fe2aEdBA5
+  - Secondary: 0x28ed0e69f998285f24f854F89C9cd8A219E1cDd4
+- Feed: **UNI/WETH**
+  - Primary: 0x9B94F18e7dC569335c8EC73fdddD4e3928230032
+  - Secondary: 0x755750811E771b7aB043Ce2C6F95219054d9A6cA
+- Feed: **LINK/WETH**
+  - Primary: 0x0ba2eF9965F2B43F95C8Bb088a63fAc82D0367f8
+  - Secondary: 0x49CF4c840c16eD37302F5Bc19D905c4D893A7148
 - All feeds
   - Tertiary: 0xaa32c429b6051aad41c8c172edbffe0922fef82c
   - Quaternary: 0x9f323d3279c3a9f8d82fc0361200de39f6127f49
