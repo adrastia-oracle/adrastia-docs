@@ -14,7 +14,11 @@ For each interface, there are two consult methods. One takes the asset address a
 
 ## Finding price feeds
 
-Refer to one of the deployments pages or our web app to find the address of the price feed contract for the asset you want to consume.
+Refer to one of the deployments pages or our web app to find the address of the price feed contract for the asset you want to consume. Please review the performance, underlying liquidity, and other metrics of the price feed before using it in your application.
+
+{% callout %}
+Be careful when using price feeds that have low liquidity, as they may be vulnerable to manipulation or inaccuracy.
+{% /callout %}
 
 ## Consulting price feeds
 
