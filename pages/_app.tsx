@@ -74,7 +74,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
       </Head>
       <TopNav>
         <a href="https://github.com/adrastia-oracle/" target="_blank">GitHub</a>
-        <a href="https://discord.gg/6mEyFRfu9C" target="_blank">Discord</a>
+        <a href="https://discord.gg/sZP9SUBuSC" target="_blank">Discord</a>
       </TopNav>
       <div className="page">
         <SideNav />
