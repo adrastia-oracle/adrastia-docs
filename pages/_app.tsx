@@ -69,8 +69,48 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
         <meta name="referrer" content="strict-origin" />
         <meta name="title" content={title + " | Adrastia Docs"} />
         <meta name="description" content={description} />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="icon" href="/favicon.ico" />
+        
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48x48.png" />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon-180x180.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="167x167"
+          href="/favicon/apple-touch-icon-167x167.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/favicon/apple-touch-icon-152x152.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="120x120"
+          href="/favicon/apple-touch-icon-120x120.png"
+        />
+
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="512x512"
+          href="/favicon/android-chrome-512x512.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicon/android-chrome-192x192.png"
+        />
+
+        <meta name="theme-color" content="#2196F3" />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <TopNav>
         <a href="https://github.com/adrastia-oracle/" target="_blank">GitHub</a>
