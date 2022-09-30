@@ -4,9 +4,16 @@ import Link from 'next/link';
 export function TopNav({children}) {
   return (
     <nav>
-      <Link href="/" className="flex">
-        Home
-      </Link>
+      <span>
+        <span style={{
+          marginRight: "8px",
+        }}>
+          <a href="https://adrastia.io/"><img src="/logo/logomark-light.svg" height="16px" /></a>
+        </span>
+        <Link href="/" className="flex">
+          Home
+        </Link>
+      </span>
       <section>{children}</section>
       <style jsx>
         {`
