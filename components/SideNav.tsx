@@ -54,6 +54,10 @@ const items = [
         children: 'Ethereum'
       },
       {
+        href: '/deployments/evmos',
+        children: 'Evmos'
+      },
+      {
         href: '/deployments/optimism',
         children: 'Optimism'
       },
