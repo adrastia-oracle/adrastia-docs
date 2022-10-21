@@ -6,6 +6,29 @@ title: Evmos
 
 ## Aggregators
 
+### USD Pegged Aggregated Oracle (USD)
+
+Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
+
+- Contract address: 0xd850F64Eda6a62d625209711510f43cD49Ef8798
+- Type: Time-weighted averages
+  - Period: 30 minutes
+- Update thresholds (% change):
+  - Price: 0.5%
+  - Liquidity: 10%
+- Required liquidity for each underlying oracle:
+  - Token liquidity value: 1,000 USD
+  - Quote token liquidity: 1,000 USD
+- Underlying oracles:
+  - Diffusion Oracle (axlUSDC): 0xB75768004b6D074aAcC42e333F5dc7232D540a9c
+  - Diffusion Oracle (ibc G-USDT): 0xd158c6d1fBefFC16A3C2F60aF4D293E70cc3942A
+  - Diffusion Oracle (ceUSDC): 0x92e67491DAC364568861cc88Ac5Dd33e3E6dC874
+
+#### Updater addresses
+- Feed: **WEVMOS/USD**
+  - Primary: 0x76560102714FDDff1AC8b53e138A220B44873F29
+  - Secondary: 0x5496461D526A5957d2e04909F039370Ecb198F89
+
 ### Aggregated Oracle (WEVMOS)
 
 Configured to provide high precision prices for assets denominated in WEVMOS.
