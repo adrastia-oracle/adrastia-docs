@@ -11,7 +11,8 @@ title: Ethereum
 Configured to provide very high precision prices for stablecoins denominated in USDC.
 
 - Contract address: 0x804511eD6C51582E8C62Ce04aFd824cfF6B6872B
-- Type: Time-weighted averages
+- Contract version: 1.0.0
+- Type: Arithmetic-mean TWAP, Arithmetic-mean TWAL
   - Period: 30 minutes
 - Update thresholds (% change):
   - Price: 0.1%
@@ -35,7 +36,8 @@ Configured to provide very high precision prices for stablecoins denominated in 
 Configured to provide high precision prices for highly liquid assets denominated in WETH.
 
 - Contract address: 0x7184CCfee311bbbB6fbC7a4abFC26D55648d9415
-- Type: Time-weighted averages
+- Contract version: 1.0.0
+- Type: Arithmetic-mean TWAP, Arithmetic-mean TWAL
   - Period: 30 minutes
 - Update thresholds (% change):
   - Price: 0.5%

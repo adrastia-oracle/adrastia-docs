@@ -87,7 +87,7 @@ Configured to provide high precision prices for assets denominated in various US
 
 - Contract address: 0xd850F64Eda6a62d625209711510f43cD49Ef8798
 - Contract version: 1.0.0
-- Type: Time-weighted averages
+- Type: Arithmetic-mean TWAP, Arithmetic-mean TWAL
   - Period: 30 minutes
 - Update thresholds (% change):
   - Price: 0.5%
@@ -111,7 +111,7 @@ Configured to provide high precision prices for assets denominated in WEVMOS.
 
 - Contract address: 0x51d3d22965Bb2CB2749f896B82756eBaD7812b6d
 - Contract version: 1.0.0
-- Type: Time-weighted averages
+- Type: Arithmetic-mean TWAP, Arithmetic-mean TWAL
   - Period: 30 minutes
 - Update thresholds (% change):
   - Price: 0.5%
