@@ -8,6 +8,10 @@ title: Ethereum
 
 ### Stablecoin Oracle (USDC)
 
+{% callout %}
+Preview-only: This oracle is not being maintained. It is only available for preview purposes. If you are interested in using Adrastia on Ethereum, please contact us regarding [sponsorship](/price-feeds/sponsoring).
+{% /callout %}
+
 Configured to provide very high precision prices for stablecoins denominated in USDC.
 
 - Contract address: 0x804511eD6C51582E8C62Ce04aFd824cfF6B6872B
@@ -32,6 +36,10 @@ Configured to provide very high precision prices for stablecoins denominated in 
   - Quaternary: 0x80c347a09299988a3bb5f59107fb70fdad6b46b3
 
 ### Large-Cap Oracle (WETH)
+
+{% callout %}
+Preview-only: This oracle is not being maintained. It is only available for preview purposes. If you are interested in using Adrastia on Ethereum, please contact us regarding [sponsorship](/price-feeds/sponsoring).
+{% /callout %}
 
 Configured to provide high precision prices for highly liquid assets denominated in WETH.
 
