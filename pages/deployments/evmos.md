@@ -83,6 +83,10 @@ Configured to provide high precision prices for assets denominated in WEVMOS.
 
 ### Legacy: USD Pegged Aggregated Oracle (USD)
 
+{% callout %}
+Legacy: This oracle is near its end-of-life. Please use the newer version listed above.
+{% /callout %}
+
 Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
 
 - Contract address: 0xd850F64Eda6a62d625209711510f43cD49Ef8798
@@ -105,7 +109,11 @@ Configured to provide high precision prices for assets denominated in various US
   - Primary: 0x76560102714FDDff1AC8b53e138A220B44873F29
   - Secondary: 0x5496461D526A5957d2e04909F039370Ecb198F89
 
-### Legacy: Aggregated Oracle (WEVMOS) v1
+### Legacy: Aggregated Oracle (WEVMOS)
+
+{% callout %}
+Legacy: This oracle is near its end-of-life. Please use the newer version listed above.
+{% /callout %}
 
 Configured to provide high precision prices for assets denominated in WEVMOS.
 
