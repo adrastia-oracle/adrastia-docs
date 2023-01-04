@@ -80,6 +80,12 @@ Configured to provide high precision prices for assets denominated in WEVMOS.
 - Feed: **axlWBTC/WEVMOS**
   - Primary: 0xa1436F37c2CD47C82E5BeD4FEd21a34eb37BfaAB
   - Secondary: 0x40C050C9A05e2C1D10334b3b0886a0C4B0693EF5
+- Feed: **axlUSDC/WEVMOS**
+  - Primary: 0x4D220e7bcfA82f2D218E7fbA4ff7FD5241c3B691
+  - Secondary: 0x12c08B7256229491FcE2679026F463594B2073B7
+- Feed: **ceUSDC/WEVMOS**
+  - Primary: 0xA005CA2dfE66FF913d553De300952eB8F7CACDD0
+  - Secondary: 0xBc1b1F4659317E0233082a4E3552d0E79Fc21007
 
 ### Legacy: USD Pegged Aggregated Oracle (USD)
 
