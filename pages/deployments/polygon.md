@@ -22,9 +22,15 @@ Configured to provide very high precision prices for stablecoins denominated in 
   - Quote token liquidity: 10,000 USDC
 - Underlying oracles:
   - Quickswap Oracle (USDC): 0x91934de765ED12C46b3ff989B7F5e970F0B7Af15
+    - Price accumulator: 0x35772434b9f1E6bc05B24EAABD6BaCdA3656115F
+    - Liquidity accumulator: 0x262466A4CDd3c99268D3edaF4eF4d0Ded8B2F81F
   - Sushiswap Oracle (USDC): 0x757e787804Dc2E9329bCBeBa9D760fE49f4161bb
+    - Price accumulator: 0xe92Ae6Bd49f68f5F4F01a11e78ba58e79328Ad24
+    - Liquidity accumulator: 0x46B12c40a3bC2c56571FaEA39B2e5dC5428D352a
   - Uniswap v3 Oracle (USDC): 0x495eF7a2e4b2F90F011a1Ba16CA7401372f5745e
     - 0.01% and 0.05% fee tiers
+    - Price accumulator: 0x2416E6A2785603f59D225f391fc576e779d6CcEF
+    - Liquidity accumulator: 0x3a6504f25c1A161Af9f2f85864d08Ff7e5D40240
 
 #### Updater addresses
 - Feed: **DAI/USDC**
@@ -59,9 +65,15 @@ Configured to provide high precision prices for highly liquid assets denominated
   - Quote token liquidity: 5 WETH
 - Underlying oracles:
   - Quickswap Oracle (WETH): 0xB82fAA4952A71189f81d68357A537188A72dc06B
+    - Price accumulator: 0x10B35407D9623b3f2597908a5bF1E0f00BbD4a91
+    - Liquidity accumulator: 0xEb102A1E9C3AEd0F21A58D398C76a2695C58E928
   - Sushiswap Oracle (WETH): 0x4F14eB6291dfAE96C1303835359307fF2bc8AaD5
+    - Price accumulator: 0x02dF4B33e79B7520697ab462042e380eF4FfB23c
+    - Liquidity accumulator: 0x6C6b82a2ff2EcAF3FC4F6a323a9Bb087973D69ae
   - Uniswap v3 Oracle (WETH): 0xf88D9621765D6e7a9D209DB7848f530f3dc67Dd9
     - 0.05% and 0.3% fee tiers
+    - Price accumulator: 0x6eCD37B311e04c15c1D8C34829eC203a9FbFbea4
+    - Liquidity accumulator: 0xd123a2a2078C9B4baF2c967be2c0bc2C316D29B0
 
 #### Updater addresses
 - Feed: **USDC/WETH**
@@ -112,9 +124,15 @@ Configured to provide very high precision prices for stablecoins denominated in 
   - Quote token liquidity: 10,000 USDC
 - Underlying oracles:
   - Quickswap Oracle (USDC): 0x66244d50b8802b189F9Df035d5fF0608a08043b6
+    - Price accumulator: 0xc763Ec3C55e1C0039689de20adAFAeA8C3d3ce70
+    - Liquidity accumulator: 0xe2c29c1172c72851DddD1e9c2F0D75c1F0666fc1
   - Sushiswap Oracle (USDC): 0x13c0Ce7fEcCa7146b9031fc70688bEc81233f40A
+    - Price accumulator: 0x368fC34A24056afdBcA62AeC1A7400af189f6D94
+    - Liquidity accumulator: 0x33eAdF30fBf8f91759E1A15571Fa157B2cCb7a12
   - Uniswap v3 Oracle (USDC): 0x366E50803d320aa7bC3d54775cfD45163e928B5F
     - 0.01% and 0.05% fee tiers
+    - Price accumulator: 0xb7738295bad27AEb971a78131cF6578169263cBE
+    - Liquidity accumulator: 0x26a3547148dC1134796244baE00494a9513469f6
 
 #### Updater addresses
 - Feed: **DAI/USDC**
@@ -153,9 +171,15 @@ Configured to provide high precision prices for highly liquid assets denominated
   - Quote token liquidity: 5 WETH
 - Underlying oracles:
   - Quickswap Oracle (WETH): 0x5C7F76849f65F1D3f5b5Dc328488348FB6828C69
+    - Price accumulator: 0x11d8d3CC7E75A951394FA95dAA8D575e1648555f
+    - Liquidity accumulator: 0xD5393e5F9f4E6A2eFA3Ee466ba49B3586d38A0C8
   - Sushiswap Oracle (WETH): 0x2CF1898C6c7b4EAa47B7b0916CDAbA09278Ff865
+    - Price accumulator: 0x66b3372BB592F7c7b25D027Eb0187ADb817D65f0
+    - Liquidity accumulator: 0x2c6b5137c40F522d0952937FD75853A46693CF62
   - Uniswap v3 Oracle (WETH): 0x0DA505a619c1eA207de1F5469ECc1cD1DA3419e3
     - 0.05% and 0.3% fee tiers
+    - Price accumulator: 0x48ebE7d748B121Fdf103fB43C8B6cbe253b40284
+    - Liquidity accumulator: 0x0fdE766eb44FA829EddAbB42d1dfb1a5178e3b34
 
 #### Updater addresses
 - Feed: **USDC/WETH**
