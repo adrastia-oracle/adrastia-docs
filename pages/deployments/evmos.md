@@ -10,8 +10,8 @@ title: Evmos
 
 Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
 
-- Contract address: 0xeA07Ede816EcD52F17aEEf82a50a608Ca5369145
-- Contract version: 2.0.0
+- Contract address: 0x8E67d82A380A82853288De38f5d4F64362397efA
+- Contract version: 3.0.0
 - Type: Geometric-mean TWAP, Harmonic-mean TWAL
   - Period: 30 minutes
 - Update thresholds (% change):
@@ -21,9 +21,10 @@ Configured to provide high precision prices for assets denominated in various US
   - Token liquidity value: 1,000 USD
   - Quote token liquidity: 1,000 USD
 - Underlying oracles:
-  - Diffusion Oracle (axlUSDC): 0xA93f56f72722780A2F14CBe38050978b0A8f9D0F
-  - Diffusion Oracle (ibc G-USDT): 0xbfdE4fDc17A53Ac0BA708f1E763643179CDCc8e8
-  - Diffusion Oracle (ceUSDC): 0x348d0e78f5Ea8Fd667A6B658d371d41FCa228381
+  - Diffusion Oracle (axlUSDC): 0x763B41Cf23a043FE4c5fBBAe39dEa1668CfB6300
+  - Diffusion Oracle (ibc G-USDT): 0xF51fB1dD286c3371c772E760dE9b60fb2e325B5A
+  - Diffusion Oracle (ceUSDC): 0xAB65F2760D2F8283F5392CB992980eD54E45908f
+  - Diffusion Oracle (gUSDC): 0xB7E8F74364467d0D336B26947090CEa9f0cC4c95
 
 #### Updater addresses
 - Feed: **WEVMOS/USD**
@@ -87,6 +88,36 @@ Configured to provide high precision prices for assets denominated in WEVMOS.
   - Primary: 0xA005CA2dfE66FF913d553De300952eB8F7CACDD0
   - Secondary: 0xBc1b1F4659317E0233082a4E3552d0E79Fc21007
 
+
+
+### Legacy: USD Pegged Aggregated Oracle (USD)
+
+{% callout %}
+Legacy: This oracle is near its end-of-life. Please use the newer version listed above.
+{% /callout %}
+
+Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
+
+- Contract address: 0xeA07Ede816EcD52F17aEEf82a50a608Ca5369145
+- Contract version: 2.0.0
+- Type: Geometric-mean TWAP, Harmonic-mean TWAL
+  - Period: 30 minutes
+- Update thresholds (% change):
+  - Price: 0.5%
+  - Liquidity: 10%
+- Required liquidity for each underlying oracle:
+  - Token liquidity value: 10,000 USD
+  - Quote token liquidity: 10,000 USD
+- Underlying oracles:
+  - Diffusion Oracle (axlUSDC): 0xA93f56f72722780A2F14CBe38050978b0A8f9D0F
+  - Diffusion Oracle (ibc G-USDT): 0xbfdE4fDc17A53Ac0BA708f1E763643179CDCc8e8
+  - Diffusion Oracle (ceUSDC): 0x348d0e78f5Ea8Fd667A6B658d371d41FCa228381
+
+#### Updater addresses
+- Feed: **WEVMOS/USD**
+  - Primary: 0x1179e60b59bBF08c469A47f7c5C0d079A2cE21A8
+  - Secondary: 0x2309CB804FE91d9cdfe03F71Ca1c02B495fDbBd5
+
 ### Legacy: USD Pegged Aggregated Oracle (USD)
 
 {% callout %}
@@ -103,8 +134,8 @@ Configured to provide high precision prices for assets denominated in various US
   - Price: 0.5%
   - Liquidity: 10%
 - Required liquidity for each underlying oracle:
-  - Token liquidity value: 1,000 USD
-  - Quote token liquidity: 1,000 USD
+  - Token liquidity value: 10,000 USD
+  - Quote token liquidity: 10,000 USD
 - Underlying oracles:
   - Diffusion Oracle (axlUSDC): 0xB75768004b6D074aAcC42e333F5dc7232D540a9c
   - Diffusion Oracle (ibc G-USDT): 0xd158c6d1fBefFC16A3C2F60aF4D293E70cc3942A
