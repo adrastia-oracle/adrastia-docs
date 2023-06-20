@@ -7,15 +7,15 @@ title: Roadmap
 The following is a rough estimate of the roadmap for Adrastia. The timeline is subject to change.
 
 ## Q3-Q4 2022
-- Official launch
+- Official launch: ✅ v1 launched October 01, 2022
 
 ## Q4 2022
-- Aggregated spot price feeds
-- Oracle registries
+- Aggregated spot price feeds: ✅ Included in v4 (behind schedule)
+- Oracle registries: ❌ Indefinitely postponed
 
 ## Q1 2023
-- Harmonic TWAPs
-- Increased management capabilities
+- Harmonic TWAPs: ✅ Included in v2, launched December 12, 2022 (ahead of schedule)
+- Increased management capabilities: ✅ Included in v4 (behind schedule)
 
 ## Q2 2023
 - Staking and incentives
