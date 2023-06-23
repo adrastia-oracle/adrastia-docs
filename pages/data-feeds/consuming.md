@@ -1,34 +1,35 @@
 ---
-title: Consuming Price Feeds
+title: Consuming Data Feeds
+description: Learn how to consume Adrastia data feeds.
 ---
 
 # {% $markdoc.frontmatter.title %}
 
 ## Overview
 
-This is a quick guide to consuming price feeds from Adrastia. Find the address of the price feed you want to consume, then use the interface or ABI to interact with the contract.
+This is a quick guide to consuming data feeds from Adrastia. Find the address of the data feed you want to consume, then use the interface or ABI to interact with the contract.
 
 If you're only interested in consuming prices, use the [`IPriceOracle`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/interfaces/IPriceOracle.sol) interface. If you're only interested in consuming liquidity levels, use the [`ILiquidityOracle`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/interfaces/ILiquidityOracle.sol) interface. If you're interested in both, use the [`IOracle`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/interfaces/IOracle.sol) interface.
 
-For each interface, there are two consult methods. One takes the asset address as the sole parameter, and the other takes the asset address and the maximum age of the consultation observation (in seconds) as parameters. The latter is useful for applications that want to ensure the price feed is up-to-date, and we recommend using it when freshness is essential. Keep in mind that specifying a maximum age of zero (0) will always return the value(s) as of the latest block, which may not be secure, and is also costly in gas.
+For each interface, there are two consult methods. One takes the asset address as the sole parameter, and the other takes the asset address and the maximum age of the consultation observation (in seconds) as parameters. The latter is useful for applications that want to ensure the data feed is up-to-date, and we recommend using it when freshness is essential. Keep in mind that specifying a maximum age of zero (0) will always return the value(s) as of the latest block, which may not be secure, and is also costly in gas.
 
-## Finding price feeds
+## Finding data feeds
 
-Refer to one of the deployments pages or our web app to find the address of the price feed contract for the asset you want to consume. Please review the performance, underlying liquidity, and other metrics of the price feed before using it in your application.
+Refer to one of the deployments pages or our web app to find the address of the data feed contract for the asset you want to consume. Please review the performance, underlying liquidity, and other metrics of the data feed before using it in your application.
 
 {% callout %}
 Be careful when using price feeds that have low liquidity, as they may be vulnerable to manipulation or inaccuracy.
 {% /callout %}
 
-## Consulting price feeds
+## Consulting data feeds
 
-Adrastia's price feeds are available on-chain as smart contracts. Interacting with them is just like interacting with any other smart contract. They can be accessed on-chain through smart contracts or off-chain through JSON-RPC calls.
+Adrastia's data feeds are available on-chain as smart contracts. Interacting with them is just like interacting with any other smart contract. They can be accessed on-chain through smart contracts or off-chain through JSON-RPC calls.
 
 ### Import the ABIs and interfaces
 
 #### Node.js and Solidity
 
-The easiest way of implementing Adrastia price feeds is to install the core node package:
+The easiest way of implementing Adrastia data feeds is to install the core node package:
 
 ```bash
 # With npm

@@ -81,14 +81,14 @@ const items = [
     ],
   },
   {
-    title: 'Price feeds',
+    title: 'Data feeds',
     links: [
       {
-        href: '/price-feeds/sponsoring',
+        href: '/data-feeds/sponsoring',
         children: 'Sponsoring'
       },
       {
-        href: '/price-feeds/consuming',
+        href: '/data-feeds/consuming',
         children: 'Consuming'
       }
     ],

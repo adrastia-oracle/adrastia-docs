@@ -14,7 +14,7 @@ This website is divided into five sections:
 - **Structure**: Describes how our smart contracts and updater systems are structured.
 - **Deployments**: Describes the different deployments of Adrastia.
 - **Security**: Describes the security of Adrastia.
-- **Price feeds**: Describes how to interact with Adrastia price feeds.
+- **Data feeds**: Describes how to interact with Adrastia data feeds.
 
 ## Navigation
 
