@@ -4,7 +4,7 @@ title: Ethereum
 
 # {% $markdoc.frontmatter.title %}
 
-## Aggregators
+## Price and Liquidity Aggregators
 
 ### Stablecoin Oracle (USDC)
 

@@ -64,6 +64,10 @@ const items = [
       {
         href: '/deployments/polygon',
         children: 'Polygon'
+      },
+      {
+        href: '/deployments/polygon-zkevm',
+        children: 'Polygon ZkEVM'
       }
     ],
   },

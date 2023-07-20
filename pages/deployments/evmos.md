@@ -4,9 +4,54 @@ title: Evmos
 
 # {% $markdoc.frontmatter.title %}
 
-## Aggregators
+## Price and Liquidity Aggregators
 
-### USD Pegged Aggregated Oracle (USD)
+### Thirty Minute Average Oracle (WEVMOS)
+
+Configured to provide high-precision price and medium-precision liquidity data for WEVMOS pairs, averaged over 30 minutes.
+
+- Contract address: 0x771D04e14eD5Ba9De8d1561a020907Ef3378cd8F
+- Contract version: 4.0.0
+- Type: Geometric-mean TWAP, harmonic-mean TWAL
+  - Period: 30 minutes
+  - Granularity: 1
+- Update thresholds:
+  - Price: 1% or every 4 hours
+  - Liquidity: 10% or every 8 hours
+- Validation:
+  - Required liquidity for each underlying oracle:
+    - Minimum token liquidity value: 1,000 WEVMOS
+    - Minimum quote token liquidity: 1,000 WEVMOS
+    - Acceptable ratio: between 1:100 and 100:1
+  - Minimum valid sources: 1
+  - Offchain pegging
+- Aggregation strategy: Quote token weighted geometric mean average
+
+### Thirty Minute Average Oracle (stEVMOS)
+
+Configured to provide high-precision price and medium-precision liquidity data for stEVMOS pairs, averaged over 30 minutes.
+
+- Contract address: 0x637D98D08331Af95DF392CC035629e64987E9Ae3
+- Contract version: 4.0.0
+- Type: Geometric-mean TWAP, harmonic-mean TWAL
+  - Period: 30 minutes
+  - Granularity: 1
+- Update thresholds:
+  - Price: 1% or every 4 hours
+  - Liquidity: 10% or every 8 hours
+- Validation:
+  - Required liquidity for each underlying oracle:
+    - Minimum token liquidity value: 1,000 stEVMOS
+    - Minimum quote token liquidity: 1,000 stEVMOS
+    - Acceptable ratio: between 1:100 and 100:1
+  - Minimum valid sources: 1
+- Aggregation strategy: Quote token weighted geometric mean average
+
+### Legacy: USD Pegged Aggregated Oracle (USD)
+
+{% callout %}
+Legacy: This oracle is near its end-of-life.
+{% /callout %}
 
 Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
 
@@ -31,7 +76,11 @@ Configured to provide high precision prices for assets denominated in various US
   - Primary: 0x1179e60b59bBF08c469A47f7c5C0d079A2cE21A8
   - Secondary: 0x2309CB804FE91d9cdfe03F71Ca1c02B495fDbBd5
 
-### Aggregated Oracle (WEVMOS)
+### Legacy: Aggregated Oracle (WEVMOS)
+
+{% callout %}
+Legacy: This oracle is near its end-of-life. Please use the newer version (Thirty Minute Average Oracle) listed above.
+{% /callout %}
 
 Configured to provide high precision prices for assets denominated in WEVMOS.
 
@@ -90,10 +139,10 @@ Configured to provide high precision prices for assets denominated in WEVMOS.
 
 
 
-### Legacy: USD Pegged Aggregated Oracle (USD)
+### Deprecated: USD Pegged Aggregated Oracle (USD)
 
 {% callout %}
-Legacy: This oracle is near its end-of-life. Please use the newer version listed above.
+Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
 {% /callout %}
 
 Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
@@ -118,10 +167,10 @@ Configured to provide high precision prices for assets denominated in various US
   - Primary: 0x1179e60b59bBF08c469A47f7c5C0d079A2cE21A8
   - Secondary: 0x2309CB804FE91d9cdfe03F71Ca1c02B495fDbBd5
 
-### Legacy: USD Pegged Aggregated Oracle (USD)
+### Deprecated: USD Pegged Aggregated Oracle (USD)
 
 {% callout %}
-Legacy: This oracle is near its end-of-life. Please use the newer version listed above.
+Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
 {% /callout %}
 
 Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
@@ -146,10 +195,10 @@ Configured to provide high precision prices for assets denominated in various US
   - Primary: 0x76560102714FDDff1AC8b53e138A220B44873F29
   - Secondary: 0x5496461D526A5957d2e04909F039370Ecb198F89
 
-### Legacy: Aggregated Oracle (WEVMOS)
+### Deprecated: Aggregated Oracle (WEVMOS)
 
 {% callout %}
-Legacy: This oracle is near its end-of-life. Please use the newer version listed above.
+Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
 {% /callout %}
 
 Configured to provide high precision prices for assets denominated in WEVMOS.

@@ -4,9 +4,100 @@ title: Polygon
 
 # {% $markdoc.frontmatter.title %}
 
-## Aggregators
+## Price and Liquidity Aggregators
 
-### Stablecoin Oracle (USDC)
+### Daily Average Oracle (WETH)
+
+Configured to provide high-precision price and medium-precision liquidity data for WETH pairs, averaged over 24 hours.
+
+- Contract address: 0xAb46C8A1876CC3656326Bb2B3616a9B4E891007B
+- Contract version: 4.0.0
+- Type: Geometric-mean TWAP, harmonic-mean TWAL
+  - Period: 24 hours
+  - Granularity: 1
+- Update thresholds:
+  - Price: 0.5% or every 4 hours
+  - Liquidity: 10% or every 8 hours
+- Validation:
+  - Required liquidity for each underlying oracle:
+    - Minimum token liquidity value: 5 WETH
+    - Minimum quote token liquidity: 5 WETH
+    - Acceptable ratio: between 1:100 and 100:1
+  - Minimum valid sources: 1
+  - Offchain pegging
+- Aggregation strategy: Quote token weighted geometric mean average
+
+### Median Filtered Daily Average Oracle (WETH)
+
+Configured to provide high-precision price and medium-precision liquidity data for WETH pairs, recording the median price and liquidity of three 24-hour TWA observations.
+
+- Contract address: 0x0a3E7369699eeBDbAfA11fE574C8619E71e9e271
+- Contract version: 4.0.0
+- Type: Median filtered oracle
+- Source oracle: Daily Average Oracle (WETH)
+- Aggregation parameters:
+  - Observation offset: 0
+  - Observation increment: 1
+  - Observation amount: 3
+
+### 7d Daily Volatility Oracle (WETH)
+
+Configured to provide historical price volatility, measured in log returns, for WETH pairs over seven days.
+
+- Contract address: 0x00428b3Ab83AC7f3C953f35cF3f6dA5588613eB7
+- Contract version: 4.0.0
+- Type: Historical price volatility oracle
+- Source oracle: Daily Average Oracle (WETH)
+- Aggregation parameters:
+  - Observation offset: 0
+  - Observation increment: 1
+  - Observation amount: 7 (8 observations are required to calculate 7 deltas)
+
+### Thirty Minute Average Oracle (WETH)
+
+Configured to provide high-precision price and medium-precision liquidity data for WETH pairs, averaged over 30 minutes.
+
+- Contract address: 0xb349D958b9E35084814B7AAb162bf3A8079d46c2
+- Contract version: 4.0.0
+- Type: Geometric-mean TWAP, harmonic-mean TWAL
+  - Period: 30 minutes
+  - Granularity: 1
+- Update thresholds:
+  - Price: 0.5% or every 4 hours
+  - Liquidity: 10% or every 8 hours
+- Validation:
+  - Required liquidity for each underlying oracle:
+    - Minimum token liquidity value: 5 WETH
+    - Minimum quote token liquidity: 5 WETH
+    - Acceptable ratio: between 1:100 and 100:1
+  - Minimum valid sources: 1
+  - Offchain pegging
+- Aggregation strategy: Quote token weighted geometric mean average
+
+### Current Rate Oracle (WMATIC)
+
+Configured to provide ultra-high-precision price and medium-precision liquidity data for WMATIC pairs.
+
+- Contract address: 0xbcdEf2ab92B23De79f38111f4C721B3A34320b90
+- Contract version: 4.0.0
+- Type: Current price and liquidity oracle
+- Update thresholds:
+  - Price: 0.1% or every 4 hours
+  - Liquidity: 10% or every 4 hours
+- Validation:
+  - Required liquidity for each underlying oracle:
+    - Minimum token liquidity value: 10,000 MATIC
+    - Minimum quote token liquidity: 10,000 MATIC
+    - Acceptable ratio: between 1:1000 and 1000:1
+  - Minimum valid sources: 1
+  - Offchain pegging
+- Aggregation strategy: Quote token weighted geometric mean average
+
+### Legacy: Stablecoin Oracle (USDC)
+
+{% callout %}
+Legacy: This oracle is near its end-of-life.
+{% /callout %}
 
 Configured to provide very high precision prices for stablecoins denominated in USDC.
 
@@ -49,7 +140,11 @@ Configured to provide very high precision prices for stablecoins denominated in 
   - Tertiary: 0xaa32c429b6051aad41c8c172edbffe0922fef82c
   - Quaternary: 0x9f323d3279c3a9f8d82fc0361200de39f6127f49
 
-### Large-Cap Oracle (WETH)
+### Legacy: Large-Cap Oracle (WETH)
+
+{% callout %}
+Legacy: This oracle is near its end-of-life. Please use the newer version (Thirty Minute Average Oracle) listed above.
+{% /callout %}
 
 Configured to provide high precision prices for highly liquid assets denominated in WETH.
 
@@ -209,3 +304,57 @@ Configured to provide high precision prices for highly liquid assets denominated
 - All feeds
   - Tertiary: 0xaa32c429b6051aad41c8c172edbffe0922fef82c
   - Quaternary: 0x9f323d3279c3a9f8d82fc0361200de39f6127f49
+
+## Gas Prices
+
+### TWA Fast Gas Oracle (Gwei)
+
+Configured to provide medium-precision fast gas prices, averaged over 15 minutes, powered by Polygonscan.
+
+- Contract address: 0xb8fa3e600a0a37bb35fb2e68f6a288f65949df54
+- Contract version: 4.0.0
+- Type: Arithmetic-mean TWAP
+  - Period: 15 minutes
+  - Granularity: 1
+- Update thresholds:
+  - Price: 25% or every 1 hour
+
+### Current Fast Gas Oracle (Gwei)
+
+Configured to provide medium-precision fast gas prices, powered by Polygonscan.
+
+- Contract address: 0xFB2a058E07E7aDadDCe98A1d836899b44a6ebD56
+- Contract version: 4.0.0
+- Type: Current price oracle
+- Update thresholds:
+  - Gas price: 25% or every 1 hour
+
+## Interest Rates
+
+### Compound III USDC Interest Rate Oracle
+
+Configured to provide high-precision interest rates for the Compound III USDC market, averaged over 7 days.
+
+Note: Interest rates are stored in the price field of the observation.
+
+- Contract address: 0x4D5881b3DFA882e1b52B64C83d8Dc6c8F2CdF8DA
+- Contract version: 4.0.0
+- Type: Geometric-mean TWA
+  - Period: 7 days
+  - Granularity: 7 (updated daily)
+- Update thresholds:
+  - Interest rate: 2% (relative change) or every 24 hours
+
+### Aave v3 USDC Interest Rate Oracle
+
+Configured to provide high-precision interest rates for the Aave v3 USDC market, averaged over 7 days.
+
+Note: Interest rates are stored in the price field of the observation.
+
+- Contract address: 0x5ebB1ADA9Df2C39bA65748Cd545499dA1AA26CCf
+- Contract version: 4.0.0
+- Type: Geometric-mean TWA
+  - Period: 7 days
+  - Granularity: 7 (updated daily)
+- Update thresholds:
+  - Interest rate: 2% (relative change) or every 24 hours
