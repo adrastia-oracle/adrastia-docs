@@ -3,5 +3,6 @@ node_modules/
 .next/
 .vscode/
 build/
+out/
 .env
 next-env.d.ts
