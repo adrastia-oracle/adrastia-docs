@@ -2,11 +2,14 @@
 title: Economics
 ---
 
-# {% $markdoc.frontmatter.title %}
+import { Callout } from 'nextra/components';
+
+# Economics
 
 ## Overview
 
 We break the economics of Adrastia into two parts:
+
 - Accurate prices at decentralized exchanges (DEXs)
 - Incentivizing updaters
 
@@ -15,6 +18,7 @@ We break the economics of Adrastia into two parts:
 While not directly related to the economics of Adrastia, the economics of decentralized exchanges (DEXs) are essential to understand. DEXs are the sole sources of on-chain price data for Adrastia. The more accurate the prices at DEXs, the more accurate the prices at Adrastia. So how accurate are DEX prices, and what factors influence this accuracy?
 
 The main factors influencing the accuracy of DEX prices are:
+
 - Liquidity
 - Fees
 - Accessibility
@@ -23,9 +27,10 @@ The main factors influencing the accuracy of DEX prices are:
 
 To understand how these factors come into play, we must look at how prices come about at DEXs. The top DEXs are all [automated market makers (AMMs)](https://www.gemini.com/cryptopedia/amm-what-are-automated-market-makers), which means they use mathematical formulas to determine asset prices. Put simply, these DEXs use the ratio of tokens in [liquidity pools](https://www.gemini.com/cryptopedia/what-is-a-liquidity-pool-crypto-market-liquidity) to determine prices. Generally, the more of one token in a pool, the lower the price of that token, and the higher the price of other tokens.
 
-{% callout %}
-[Video: What is an Automated Market Maker? (Liquidity Pool Algorithm)](https://www.youtube.com/watch?v=1PbZMudPP5E)
-{% /callout %}
+<Callout emoji="🧿">
+  [Video: What is an Automated Market Maker? (Liquidity Pool
+  Algorithm)](https://www.youtube.com/watch?v=1PbZMudPP5E)
+</Callout>
 
 As traders buy and sell tokens, the ratio of tokens in the pool changes. This token swapping changes the price of the tokens. The liquidity of the pool determines how many tokens can be swapped before the price changes (note: this change is known as slippage). Higher liquidity means the price will change less as tokens are swapped.
 
@@ -65,11 +70,11 @@ Thankfully, the DEXs that Adrastia aggregates are all permissionless and accessi
 
 DEX prices are accurate because arbitrageurs take advantage of arbitrage opportunities. Fees and liquidity influence the profitability of arbitrage opportunities. The higher the liquidity of the pool and the lower the fees, the more likely the arbitrage opportunity will be profitable and thus take place. Anyone can take advantage of arbitrage opportunities because the DEXs we aggregate are permissionless and accessible to everyone.
 
-{% callout %}
+<Callout emoji="🧿">
 
 Arbitrage bots keep DEX prices accurate. See [this video](https://www.youtube.com/watch?v=b3BcH5DvC-Q) for more information on arbitrage.
 
-{% /callout %}
+</Callout>
 
 ## Incentivizing updaters
 

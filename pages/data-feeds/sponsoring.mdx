@@ -3,7 +3,9 @@ title: Sponsoring Data Feeds
 description: Learn how to sponsor Adrastia data feeds.
 ---
 
-# {% $markdoc.frontmatter.title %}
+import { Callout } from 'nextra/components';
+
+# Sponsoring Data Feeds
 
 ## Introduction
 
@@ -12,6 +14,7 @@ Data feeds cost money to maintain. They require infrastructure to run the bots a
 ## Payees
 
 Anyone who wants to can pay for data feeds. Typically this will be:
+
 - Projects with their own token
 - Lending platforms wanting to create a market for a token
 - Wealthy investors wanting to borrow against their tokens
@@ -27,6 +30,7 @@ Sponsorships cost US$2500/month for each data feed plus gas costs.
 ### Gas cost estimates
 
 Gas costs for each data feed vary based on a variety of factors:
+
 - Resolution (percent change that triggers an update)
 - Heartbeats (the maximum time between updates)
 - TWAP periods
@@ -35,6 +39,7 @@ Gas costs for each data feed vary based on a variety of factors:
 - Gas price
 
 Rough estimates for worst-case gas costs with 0.5% price resolution, 10% liquidity resolution, 24-hour heartbeats, 30-minute TWAP periods, and three underlying DEXs as of September 20, 2022 (over the past month) for USDC/WETH (as an example) are:
+
 - Ethereum: 7 ETH/month (at 22 Gwei average gas cost)
 - Polygon: 65 MATIC/month (at 141 average gas cost)
 - Optimism/Arbitrum: 0.15 ETH/month (at 22 Gwei average Ethereum gas cost)
@@ -50,6 +55,7 @@ There are no universal guarantees or SLAs. See our main website for data on the 
 ## Other requirements
 
 In addition to paying for the data feeds, other requirements are:
+
 1. If the data feed is for a price, there should be sufficient DEX liquidity for the token. See the relevant deployments pages for more details on the required liquidity for each underlying oracle.
 
 ## Proceeding with sponsorship
@@ -57,6 +63,7 @@ In addition to paying for the data feeds, other requirements are:
 If you're interested in sponsoring a data feed, please send us a message in the #partnerships channel on our Discord server.
 
 The process will look something like this:
+
 1. We'll discuss your needs for the data feed you want to sponsor and come to an agreement.
 2. You'll send us the base cost in USDC, DAI, or RAI on Ethereum.
 3. We'll create a cold wallet for the data feed gas costs and send you the address.
@@ -72,15 +79,16 @@ We'll return unused funds in the cold wallet at the end of the sponsorship perio
 
 We'll top our hot wallets when their balances fall below a certain threshold, defined as follows:
 
-| Chain | Threshold | Top-up amount |
-| ----- | --------- | ------------- |
-| Ethereum | 2 ETH | 5 ETH |
-| Optimism | 0.2 ETH | 1 ETH |
-| Arbitrum | 0.2 ETH | 1 ETH |
-| Polygon | 100 MATIC | 250 MATIC |
+| Chain    | Threshold | Top-up amount |
+| -------- | --------- | ------------- |
+| Ethereum | 2 ETH     | 5 ETH         |
+| Optimism | 0.2 ETH   | 1 ETH         |
+| Arbitrum | 0.2 ETH   | 1 ETH         |
+| Polygon  | 100 MATIC | 250 MATIC     |
 
 When we have multiple sponsors for a single data feed, we'll split the hot wallet funding between them.
 
-{% callout %}
-Ensure that the cold wallet address we give you never runs out of funds. If it does, the data feed may stop updating.
-{% /callout %}
+<Callout emoji="🧿">
+  Ensure that the cold wallet address we give you never runs out of funds. If it does, the data feed
+  may stop updating.
+</Callout>

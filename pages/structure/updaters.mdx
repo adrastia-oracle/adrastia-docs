@@ -2,7 +2,9 @@
 title: Updaters
 ---
 
-# {% $markdoc.frontmatter.title %}
+import { Callout } from 'nextra/components';
+
+# Updaters
 
 ## Overview
 
@@ -21,41 +23,49 @@ Note: Only EOAs can perform updates. Updates called from other smart contracts w
 ### Price accumulators
 
 Price accumulators are updated by encoding the following information into a bytes array and passing it to the `update(bytes memory data)` function:
+
 1. `address` of the token to update the price accumulator for
 2. `uint112` of the price to perform a validation against
 
 If the price passed by the updater bot is within half of the update threshold of the current price, the price accumulator will be updated. Otherwise, nothing will be updated.
 
-{% callout %}
-Prices passed via the data parameter are never stored on-chain. They are only used to validate that the on-chain price being recorded matches the price that the updater bot is seeing. This is to prevent manipulation by MEV bots.
-{% /callout %}
+<Callout emoji="🧿">
+  Prices passed via the data parameter are never stored on-chain. They are only used to validate
+  that the on-chain price being recorded matches the price that the updater bot is seeing. This is
+  to prevent manipulation by MEV bots.
+</Callout>
 
 ### Liquidity accumulators
 
 Liquidity accumulators are updated by encoding the following information into a bytes array and passing it to the `update(bytes memory data)` function:
+
 1. `address` of the token to update the liquidity accumulator for
 2. `uint112` of the token liquidity to perform a validation against
 3. `uint112` of the quote token liquidity to perform a validation against
 
 If the liquidity levels passed by the updater bot is within half of the update threshold of the current liquidity levels, the liquidity accumulator will be updated. Otherwise, nothing will be updated.
 
-{% callout %}
-Liquidities passed via the data parameter are never stored on-chain. They are only used to validate that the on-chain liquidity levels being recorded matches the liquidity levels that the updater bot is seeing. This is to prevent manipulation by MEV bots.
-{% /callout %}
+<Callout emoji="🧿">
+  Liquidities passed via the data parameter are never stored on-chain. They are only used to
+  validate that the on-chain liquidity levels being recorded matches the liquidity levels that the
+  updater bot is seeing. This is to prevent manipulation by MEV bots.
+</Callout>
 
 ### Top level oracles
 
 Our top level oracle contracts, namely `AggregatedOracle`, can be updated by anyone provided that the underlying components are up-to-date. The address of the token to update the oracle for is encoded and passed to the `update(bytes memory data)` function. This will then update all of the underlying oracles for the token as long as those oracles' accumulators are up-to-date.
 
-{% callout %}
-The underlying oracles can only be updated by the top level (aggregated) oracle so as to ensure that the underlying oracles are always in perfect alignment with the top level oracle.
-{% /callout %}
+<Callout emoji="🧿">
+  The underlying oracles can only be updated by the top level (aggregated) oracle so as to ensure
+  that the underlying oracles are always in perfect alignment with the top level oracle.
+</Callout>
 
 ## Updater bot structure
 
 ### Adrastia team updater bot infrastructure
 
 It is of utmost importance that all oracle contracts and components are as up-to-date as possible. In order to ensure this, we have created a very redundant and fault tolerant system of updater bots. The structure of this system is as follows:
+
 - A primary updater bot (or rather, series of updater bots) using a separate address for each and every price feed
   - Running on a self-managed dedicated server at a data center with N+2 redundancy and strict physical security
   - RPC providers are self-managed nodes, each running on their own powerful dedicated server at the same data center
@@ -71,9 +81,7 @@ It is of utmost importance that all oracle contracts and components are as up-to
   - Only critical updates are performed by this bot
     - Critical: when update requirements are surpassed by 50%
 
-{% callout %}
-See the Deployments section for the addresses of our updater bots.
-{% /callout %}
+<Callout emoji="🧿">See the Deployments section for the addresses of our updater bots.</Callout>
 
 ### Community updater bot infrastructure
 

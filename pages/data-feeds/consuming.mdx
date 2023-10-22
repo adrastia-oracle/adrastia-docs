@@ -3,7 +3,9 @@ title: Consuming Data Feeds
 description: Learn how to consume Adrastia data feeds.
 ---
 
-# {% $markdoc.frontmatter.title %}
+import { Callout } from 'nextra/components';
+
+# Consuming Data Feeds
 
 ## Overview
 
@@ -17,9 +19,10 @@ For each interface, there are two consult methods. One takes the asset address a
 
 Refer to one of the deployments pages or our [web app](https://adrastia.io/app/) to find the address of the data feed contract for the asset you want to consume. Please review the performance, underlying liquidity, and other metrics of the data feed before using it in your application.
 
-{% callout %}
-Be careful when using price feeds that have low liquidity, as they may be vulnerable to manipulation or inaccuracy.
-{% /callout %}
+<Callout emoji="🧿">
+  Be careful when using price feeds that have low liquidity, as they may be vulnerable to
+  manipulation or inaccuracy.
+</Callout>
 
 ## Consulting data feeds
 

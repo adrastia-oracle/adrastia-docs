@@ -2,13 +2,14 @@
 title: Contracts
 ---
 
-# {% $markdoc.frontmatter.title %}
+# Contracts
 
 ## Overview
 
 Our smart contracts work by making continuous observations of the current on-chain state of various decentralized exchanges (DEXs). Specifically, our contracts track prices and liquidity levels across various DEXs, then aggregates the data to produce secure and reliable data feeds.
 
 We define three types of contracts to provide secure data feeds:
+
 1. **Accumulators**: At the lowest level, accumulators collect observations from various DEXs.
 2. **Intermediate oracles**: Intermediate oracles use data from accumulators to collect, produce, and store derived data such as time-weighted average price and liquidity at a single source.
 3. **Aggregator oracles**: Aggregators combine data from multiple sources and reduce them to singular data points.
@@ -69,6 +70,7 @@ Aggregators combine data from multiple sources and reduce them to singular data 
 The sole aggregator oracle contract in use is `AggregatedOracle`. This contract takes a set of underlying (intermediate) oracles, quote token information, a period, and minimum required liquidity values as arguments. Every `period` number of seconds, the `update` function is called by an updater bot. Upon update, all underlying oracles are updated and then consulted. As long as the required minimum number of valid consultations (currently just one) is met, the price and liquidity from the valid consultations is aggregated and a final price and liquidity levels are stored for later consultation.
 
 An underlying oracle consultation is considered valid if:
+
 - The consultation's observational age is less than the `AggregatedOracle`'s period, and
 - The price and quote token liquidity are not zero, and
 - The quote token liquidity is at least the minimum required, and

@@ -2,7 +2,9 @@
 title: Polygon
 ---
 
-# {% $markdoc.frontmatter.title %}
+import { Callout } from 'nextra/components';
+
+# Polygon
 
 ## Price and Liquidity Aggregators
 
@@ -95,9 +97,7 @@ Configured to provide ultra-high-precision price and medium-precision liquidity 
 
 ### Legacy: Stablecoin Oracle (USDC)
 
-{% callout %}
-Legacy: This oracle is near its end-of-life.
-{% /callout %}
+<Callout emoji="🧿">Legacy: This oracle is near its end-of-life.</Callout>
 
 Configured to provide very high precision prices for stablecoins denominated in USDC.
 
@@ -124,6 +124,7 @@ Configured to provide very high precision prices for stablecoins denominated in 
     - Liquidity accumulator: 0x3a6504f25c1A161Af9f2f85864d08Ff7e5D40240
 
 #### Updater addresses
+
 - Feed: **DAI/USDC**
   - Primary: 0xC711F4f3c0F59ccbE07F5C6CbfA06c451E86594e
   - Secondary: 0xF3e50d02bD7b659a7E47b547bd3ED5cEBDB79973
@@ -142,9 +143,10 @@ Configured to provide very high precision prices for stablecoins denominated in 
 
 ### Legacy: Large-Cap Oracle (WETH)
 
-{% callout %}
-Legacy: This oracle is near its end-of-life. Please use the newer version (Thirty Minute Average Oracle) listed above.
-{% /callout %}
+<Callout emoji="🧿">
+  Legacy: This oracle is near its end-of-life. Please use the newer version (Thirty Minute Average
+  Oracle) listed above.
+</Callout>
 
 Configured to provide high precision prices for highly liquid assets denominated in WETH.
 
@@ -171,6 +173,7 @@ Configured to provide high precision prices for highly liquid assets denominated
     - Liquidity accumulator: 0xd123a2a2078C9B4baF2c967be2c0bc2C316D29B0
 
 #### Updater addresses
+
 - Feed: **USDC/WETH**
   - Primary: 0xc9f551a5f3f7e9d5c4d1a031e0f926aadb391c2d
   - Secondary: 0x1da6d533e81f8d6590fb8a09d03de1820390f331
@@ -201,9 +204,9 @@ Configured to provide high precision prices for highly liquid assets denominated
 
 ### Deprecated: Stablecoin Oracle (USDC)
 
-{% callout %}
-Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
-{% /callout %}
+<Callout emoji="🧿">
+  Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
+</Callout>
 
 Configured to provide very high precision prices for stablecoins denominated in USDC.
 
@@ -230,6 +233,7 @@ Configured to provide very high precision prices for stablecoins denominated in 
     - Liquidity accumulator: 0x26a3547148dC1134796244baE00494a9513469f6
 
 #### Updater addresses
+
 - Feed: **DAI/USDC**
   - Primary: 0xC711F4f3c0F59ccbE07F5C6CbfA06c451E86594e
   - Secondary: 0xF3e50d02bD7b659a7E47b547bd3ED5cEBDB79973
@@ -248,9 +252,9 @@ Configured to provide very high precision prices for stablecoins denominated in 
 
 ### Deprecated: Large-Cap Oracle (WETH)
 
-{% callout %}
-Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
-{% /callout %}
+<Callout emoji="🧿">
+  Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
+</Callout>
 
 Configured to provide high precision prices for highly liquid assets denominated in WETH.
 
@@ -277,6 +281,7 @@ Configured to provide high precision prices for highly liquid assets denominated
     - Liquidity accumulator: 0x0fdE766eb44FA829EddAbB42d1dfb1a5178e3b34
 
 #### Updater addresses
+
 - Feed: **USDC/WETH**
   - Primary: 0xc9f551a5f3f7e9d5c4d1a031e0f926aadb391c2d
   - Secondary: 0x1da6d533e81f8d6590fb8a09d03de1820390f331

@@ -2,7 +2,9 @@
 title: Evmos
 ---
 
-# {% $markdoc.frontmatter.title %}
+import { Callout } from 'nextra/components';
+
+# Evmos
 
 ## Price and Liquidity Aggregators
 
@@ -49,9 +51,7 @@ Configured to provide high-precision price and medium-precision liquidity data f
 
 ### Legacy: USD Pegged Aggregated Oracle (USD)
 
-{% callout %}
-Legacy: This oracle is near its end-of-life.
-{% /callout %}
+<Callout emoji="🧿">Legacy: This oracle is near its end-of-life.</Callout>
 
 Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
 
@@ -72,15 +72,17 @@ Configured to provide high precision prices for assets denominated in various US
   - Diffusion Oracle (gUSDC): 0xB7E8F74364467d0D336B26947090CEa9f0cC4c95
 
 #### Updater addresses
+
 - Feed: **WEVMOS/USD**
   - Primary: 0x1179e60b59bBF08c469A47f7c5C0d079A2cE21A8
   - Secondary: 0x2309CB804FE91d9cdfe03F71Ca1c02B495fDbBd5
 
 ### Legacy: Aggregated Oracle (WEVMOS)
 
-{% callout %}
-Legacy: This oracle is near its end-of-life. Please use the newer version (Thirty Minute Average Oracle) listed above.
-{% /callout %}
+<Callout emoji="🧿">
+  Legacy: This oracle is near its end-of-life. Please use the newer version (Thirty Minute Average
+  Oracle) listed above.
+</Callout>
 
 Configured to provide high precision prices for assets denominated in WEVMOS.
 
@@ -100,6 +102,7 @@ Configured to provide high precision prices for assets denominated in WEVMOS.
   - Cronus Oracle (WEVMOS): 0x99dB18b1b171754AB278da1F06C9509E22986D4C
 
 #### Updater addresses
+
 - Feed: **gUSDC/WEVMOS**
   - Primary: 0x975E6dC6B0dDdEc530269E6524aa337D580c0942
   - Secondary: 0xF6b4566e7647e158100CB934ec71A31cF92a9E3A
@@ -137,13 +140,11 @@ Configured to provide high precision prices for assets denominated in WEVMOS.
   - Primary: 0xA005CA2dfE66FF913d553De300952eB8F7CACDD0
   - Secondary: 0xBc1b1F4659317E0233082a4E3552d0E79Fc21007
 
-
-
 ### Deprecated: USD Pegged Aggregated Oracle (USD)
 
-{% callout %}
-Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
-{% /callout %}
+<Callout emoji="🧿">
+  Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
+</Callout>
 
 Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
 
@@ -163,15 +164,16 @@ Configured to provide high precision prices for assets denominated in various US
   - Diffusion Oracle (ceUSDC): 0x348d0e78f5Ea8Fd667A6B658d371d41FCa228381
 
 #### Updater addresses
+
 - Feed: **WEVMOS/USD**
   - Primary: 0x1179e60b59bBF08c469A47f7c5C0d079A2cE21A8
   - Secondary: 0x2309CB804FE91d9cdfe03F71Ca1c02B495fDbBd5
 
 ### Deprecated: USD Pegged Aggregated Oracle (USD)
 
-{% callout %}
-Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
-{% /callout %}
+<Callout emoji="🧿">
+  Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
+</Callout>
 
 Configured to provide high precision prices for assets denominated in various USD-pegged stablecoins on Diffusion.
 
@@ -191,15 +193,16 @@ Configured to provide high precision prices for assets denominated in various US
   - Diffusion Oracle (ceUSDC): 0x92e67491DAC364568861cc88Ac5Dd33e3E6dC874
 
 #### Updater addresses
+
 - Feed: **WEVMOS/USD**
   - Primary: 0x76560102714FDDff1AC8b53e138A220B44873F29
   - Secondary: 0x5496461D526A5957d2e04909F039370Ecb198F89
 
 ### Deprecated: Aggregated Oracle (WEVMOS)
 
-{% callout %}
-Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
-{% /callout %}
+<Callout emoji="🧿">
+  Deprecated: This oracle is no longer maintained. It has been replaced by a newer version.
+</Callout>
 
 Configured to provide high precision prices for assets denominated in WEVMOS.
 
@@ -219,6 +222,7 @@ Configured to provide high precision prices for assets denominated in WEVMOS.
   - Cronus Oracle (WEVMOS): 0x2Ff3791C3F933dCad359CaE024bbC80847aD2deb
 
 #### Updater addresses
+
 - Feed: **gUSDC/WEVMOS**
   - Primary: 0x3b28D068e55E72355d726E7836a130C0918E9c0E
   - Secondary: 0xECfb47E14827EC01B4535fF8E00a9A2b62Bf95ac
