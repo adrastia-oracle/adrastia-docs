@@ -1,5 +1,6 @@
 ---
 title: Credit Extension Oracle
+description: Credit Extension Oracles are purpose-built for lending protocols to extend credit — slowly. Read about how they enhance the security of DeFi lending protocols.
 ---
 
 import { Callout } from 'nextra/components';
@@ -8,7 +9,7 @@ import { Callout } from 'nextra/components';
 
 ## Purpose
 
-Credit Extension Oracles (CEO) are purpose-built for lending protocols to extend credit — **slowly**. By aggregating a liquidation oracle and a median filtered daily average oracle, CEOs can be used to extend credit to a borrower in a way that is safe for the protocol. Price movements have to be sustained for a period of time (typically days) before the CEO will extend credit at the new price.
+Credit Extension Oracles (CEOs) are purpose-built for lending protocols to extend credit — **slowly**. By aggregating a liquidation oracle and a median filtered daily average oracle, CEOs can be used to extend credit to a borrower in a way that is safe for the protocol. Price movements have to be sustained for a period of time (typically days) before the CEO will extend credit at the new price.
 
 Rather than using one feed to determine the price for both credit extension and liquidation, we offer a split oracle design. This allows us to use a more aggressive oracle for liquidation, while using more conservative oracles for credit extension.
 
