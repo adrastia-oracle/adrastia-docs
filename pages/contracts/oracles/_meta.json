@@ -1,1 +1,6 @@
-{}
+{
+  "accumulators": "Accumulators",
+  "aggregators": "Aggregators",
+  "views": "Views",
+  "twap": "TWAP"
+}
