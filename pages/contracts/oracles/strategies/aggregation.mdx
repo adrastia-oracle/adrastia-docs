@@ -1,0 +1,43 @@
+---
+title: Oracle Aggregation Strategies
+---
+
+# Oracle Aggregation Strategies
+
+## Implementations
+
+### Minimum
+
+An observation aggregation strategy that calculates the [minimum](https://en.wikipedia.org/wiki/Minimum) price and the total liquidity of the observations.
+
+- Contract: [`MinimumAggregator`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/aggregation/MinimumAggregator.sol)
+
+### Maximum
+
+An observation aggregation strategy that calculates the [maximum](https://en.wikipedia.org/wiki/Maximum) price and the total liquidity of the observations.
+
+- Contract: [`MaximumAggregator`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/aggregation/MaximumAggregator.sol)
+
+### Median
+
+An observation aggregation strategy that calculates the [median](https://en.wikipedia.org/wiki/Median) price and the total liquidity of the observations.
+
+- Contract: [`MedianAggregator`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/aggregation/MedianAggregator.sol)
+
+### Weighted mean (average)
+
+An observation aggregation strategy that calculates weighted mean price and the total liquidity of the observations. By default, the weight of each observation is 1, making this a simple average.
+
+- Contract: [`MeanAggregator`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/aggregation/MeanAggregator.sol)
+
+#### Token weighted mean
+
+An observation aggregation strategy that calculates the mean price weighted by the token liquidity of each observation, and the total liquidity of the observations.
+
+- Contract: [`TokenWeightedMeanAggregator`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/aggregation/TokenWeightedMeanAggregator.sol)
+
+#### Quote token weighted mean
+
+An observation aggregation strategy that calculates the mean price weighted by the quote token liquidity of each observation, and the total liquidity of the observations.
+
+- Contract: [`QuoteTokenWeightedMeanAggregator`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/aggregation/QuoteTokenWeightedMeanAggregator.sol)

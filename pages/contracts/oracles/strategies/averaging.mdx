@@ -1,0 +1,36 @@
+---
+title: Oracle Averaging Strategies
+---
+
+# Oracle Aggregation Strategies
+
+## Implementations
+
+### Arithmetic mean
+
+An averaging strategy that calculates the [arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean) (simple average).
+
+- Contract: [`ArithmeticAveraging`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/averaging/ArithmeticAveraging.sol)
+
+### Geometric mean
+
+An averaging strategy that calculates the [geometric mean](https://en.wikipedia.org/wiki/Geometric_mean).
+
+Note that input values of zero are treated as one as the natural log of zero is undefined.
+
+- Contract: [`GeometricAveraging`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/averaging/GeometricAveraging.sol)
+
+### Harmonic mean
+
+An averaging strategy that calculates the [harmonic mean](https://en.wikipedia.org/wiki/Harmonic_mean).
+
+Note that since Solidity does not support floating point numbers, weights are shifted to the left by a fixed number of bits before the calculation is performed. This shift is to prevent the result from being rounded down to zero when the weights are smaller than the input values.
+
+Consider how large the input values are and how small the weights are when choosing the number of bits to shift by. For example, if the smallest weight can be 1 and the largest input value can be 2^32 (32 bit input), then using a weight-shift of 80 bits will ensure 48 (80-32) bits of precision in the result.
+
+- Contract: [`HarmonicAveragingWS80`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/averaging/HarmonicAveragingWS80.sol)
+  - This contract shifts the weights to the left by 80 bits.
+- Contract: [`HarmonicAveragingWS140`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/averaging/HarmonicAveragingWS140.sol)
+  - This contract shifts the weights to the left by 140 bits.
+- Contract: [`HarmonicAveragingWS192`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/strategies/averaging/HarmonicAveragingWS192.sol)
+  - This contract shifts the weights to the left by 192 bits.
