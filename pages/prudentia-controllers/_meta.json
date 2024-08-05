@@ -1,3 +1,4 @@
 {
-  "pid-controller": "PID Controller"
+  "pid-controller": "PID Controller",
+  "cap-controller": "Cap Controller"
 }
