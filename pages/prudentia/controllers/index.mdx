@@ -1,0 +1,144 @@
+---
+title: Controllers Overview | Prudentia
+description: An overview of the Adrastia Prudentia controllers.
+---
+
+# Controllers
+
+## Overview
+
+Prudentia Controllers are smart contracts that provide rate-control functionality, typically with the help of Prudentia Computers. These controllers can be used to manage interest rates, supply and borrow caps, collateral factors, and more.
+
+## Interface
+
+All Prudentia Controllers implement the following interfaces:
+
+### IRateComputer
+
+```solidity
+/**
+ * @title IRateComputer
+ * @notice An interface that defines a contract that computes rates.
+ */
+interface IRateComputer {
+    /// @notice Computes the rate for a token.
+    /// @param token The address of the token to compute the rate for.
+    /// @return rate The rate for the token.
+    function computeRate(address token) external view returns (uint64);
+}
+```
+
+### IHistoricalRates
+
+```solidity
+library RateLibrary {
+    struct Rate {
+        uint64 target;
+        uint64 current;
+        uint32 timestamp;
+    }
+}
+
+/**
+ * @title IHistoricalRates
+ * @notice An interface that defines a contract that stores historical rates.
+ */
+interface IHistoricalRates {
+    /// @notice Gets an rate for a token at a specific index.
+    /// @param token The address of the token to get the rates for.
+    /// @param index The index of the rate to get, where index 0 contains the latest rate, and the last
+    ///   index contains the oldest rate (uses reverse chronological ordering).
+    /// @return rate The rate for the token at the specified index.
+    function getRateAt(address token, uint256 index) external view returns (RateLibrary.Rate memory);
+
+    /// @notice Gets the latest rates for a token.
+    /// @param token The address of the token to get the rates for.
+    /// @param amount The number of rates to get.
+    /// @return rates The latest rates for the token, in reverse chronological order, from newest to oldest.
+    function getRates(address token, uint256 amount) external view returns (RateLibrary.Rate[] memory);
+
+    /// @notice Gets the latest rates for a token.
+    /// @param token The address of the token to get the rates for.
+    /// @param amount The number of rates to get.
+    /// @param offset The index of the first rate to get (default: 0).
+    /// @param increment The increment between rates to get (default: 1).
+    /// @return rates The latest rates for the token, in reverse chronological order, from newest to oldest.
+    function getRates(
+        address token,
+        uint256 amount,
+        uint256 offset,
+        uint256 increment
+    ) external view returns (RateLibrary.Rate[] memory);
+
+    /// @notice Gets the number of rates for a token.
+    /// @param token The address of the token to get the number of rates for.
+    /// @return count The number of rates for the token.
+    function getRatesCount(address token) external view returns (uint256);
+
+    /// @notice Gets the capacity of rates for a token.
+    /// @param token The address of the token to get the capacity of rates for.
+    /// @return capacity The capacity of rates for the token.
+    function getRatesCapacity(address token) external view returns (uint256);
+
+    /// @notice Sets the capacity of rates for a token.
+    /// @param token The address of the token to set the capacity of rates for.
+    /// @param amount The new capacity of rates for the token.
+    function setRatesCapacity(address token, uint256 amount) external;
+}
+```
+
+### IUpdateable
+
+```solidity
+/// @title IUpdateByToken
+/// @notice An interface that defines a contract that is updateable as per the input data.
+abstract contract IUpdateable {
+/// @notice Performs an update as per the input data.
+/// @param data Any data needed for the update.
+/// @return b True if anything was updated; false otherwise.
+function update(bytes memory data) public virtual returns (bool b);
+
+    /// @notice Checks if an update needs to be performed.
+    /// @param data Any data relating to the update.
+    /// @return b True if an update needs to be performed; false otherwise.
+    function needsUpdate(bytes memory data) public view virtual returns (bool b);
+
+    /// @notice Check if an update can be performed by the caller (if needed).
+    /// @dev Tries to determine if the caller can call update with a valid observation being stored.
+    /// @dev This is not meant to be called by state-modifying functions.
+    /// @param data Any data relating to the update.
+    /// @return b True if an update can be performed by the caller; false otherwise.
+    function canUpdate(bytes memory data) public view virtual returns (bool b);
+
+    /// @notice Gets the timestamp of the last update.
+    /// @param data Any data relating to the update.
+    /// @return A unix timestamp.
+    function lastUpdateTime(bytes memory data) public view virtual returns (uint256);
+
+    /// @notice Gets the amount of time (in seconds) since the last update.
+    /// @param data Any data relating to the update.
+    /// @return Time in seconds.
+    function timeSinceLastUpdate(bytes memory data) public view virtual returns (uint256);
+
+}
+
+```
+
+### IPeriodic
+
+```solidity
+/**
+ * @title IPeriodic
+ * @notice An interface that defines a contract containing a period.
+ * @dev This typically refers to an update period.
+ */
+interface IPeriodic {
+    /// @notice Gets the period, in seconds.
+    /// @return periodSeconds The period, in seconds.
+    function period() external view returns (uint256 periodSeconds);
+
+    // @notice Gets the number of observations made every period.
+    // @return granularity The number of observations made every period.
+    function granularity() external view returns (uint256 granularity);
+}
+```
