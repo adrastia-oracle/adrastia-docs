@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "es6",
-    "lib": ["es6", "dom"],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "strict": true,
     "noEmit": true,
     "allowJs": true,
@@ -20,8 +20,11 @@
     "useUnknownInCatchVariables": false,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "incremental": true
+    "incremental": true,
+    "paths": {
+      "@components/*": ["components/*"]
+    }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "typechain/**/*"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
