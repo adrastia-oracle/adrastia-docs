@@ -1,0 +1,27 @@
+---
+title: Computers Overview | Prudentia
+description: An overview of the Adrastia Prudentia computers.
+---
+
+# Computers
+
+## Overview
+
+Prudentia Computers are smart contracts that plug into various Prudentia Controllers to provide specific computation logic.
+
+## Interface
+
+All Prudentia Computers implement the following interface:
+
+```solidity
+/**
+ * @title IRateComputer
+ * @notice An interface that defines a contract that computes rates.
+ */
+interface IRateComputer {
+    /// @notice Computes the rate for a token.
+    /// @param token The address of the token to compute the rate for.
+    /// @return rate The rate for the token.
+    function computeRate(address token) external view returns (uint64);
+}
+```
