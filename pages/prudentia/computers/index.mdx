@@ -11,7 +11,9 @@ Prudentia Computers are smart contracts that plug into various Prudentia Control
 
 ## Interface
 
-All Prudentia Computers implement the following interface:
+All Prudentia Computers must implement the following interfaces:
+
+### IRateComputer
 
 ```solidity
 /**
@@ -23,5 +25,21 @@ interface IRateComputer {
     /// @param token The address of the token to compute the rate for.
     /// @return rate The rate for the token.
     function computeRate(address token) external view returns (uint64);
+}
+```
+
+### IERC165
+
+```solidity
+interface IERC165 {
+    /**
+     * @dev Returns true if this contract implements the interface defined by
+     * `interfaceId`. See the corresponding
+     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]
+     * to learn more about how these ids are created.
+     *
+     * This function call must use less than 30 000 gas.
+     */
+    function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 ```
