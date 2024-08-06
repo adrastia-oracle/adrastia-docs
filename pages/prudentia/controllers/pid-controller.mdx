@@ -4,8 +4,25 @@ description: PID controllers automate the adjustment of interest rates to find t
 ---
 
 import { Callout } from 'nextra/components';
+import { Cards, Card } from 'nextra/components';
+import { GitHubIcon } from '@components/icons';
 
 # PID Controller
+
+<Cards>
+  <Card
+    icon={<GitHubIcon />}
+    title="Base Contract"
+    href="https://github.com/adrastia-oracle/adrastia-periphery/blob/main/contracts/rates/controllers/PidController.sol"
+    target="_blank"
+  />
+  <Card
+    icon={<GitHubIcon />}
+    title="Managed Contract"
+    href="https://github.com/adrastia-oracle/adrastia-periphery/blob/main/contracts/rates/controllers/ManagedPidController.sol"
+    target="_blank"
+  />
+</Cards>
 
 ## Purpose
 
