@@ -46,7 +46,7 @@ The [Cap Controller](https://github.com/adrastia-oracle/adrastia-periphery/blob/
 
 ### Cap Computer
 
-Cap Computers provide the logic to compute the cap before it is clamped by the Cap Controller. The suggested computer is the [ERC20 Mutation Computer](https://github.com/adrastia-oracle/adrastia-periphery/blob/main/contracts/rates/computers/Erc20MutationComputer.sol) that reads the total supply or borrow balance for a market from an oracle and computes the cap based on a simple formula: `total * scalar + offset`.
+Cap Computers provide the logic to compute the cap before it is clamped by the Cap Controller. The suggested computer is the [Oracle Mutation Computer](../computers/oracle-mutation-computer) that reads the total supply or borrow balance for a market from an oracle and computes the cap based on a simple formula: `total * scalar + offset`.
 
 ## Update flow
 
