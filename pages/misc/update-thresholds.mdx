@@ -1,0 +1,31 @@
+---
+title: Update Thresholds
+description: Learn about how Adrastia defines update thresholds.
+---
+
+# Update Thresholds
+
+## Overview
+
+Various contracts make use of a concept called "update thresholds" to determine when an update should be performed. These thresholds are defined as normalized percentages, which are then compared to the difference between the current value and the new value. If the difference is greater than or equal to the threshold, an update is required.
+
+## Normalization
+
+When comparing two values as an absolute percentage difference, normalization is required. For instance, consider when an asset price decreases by 50%, from $100 to $50. One would expect the same percentage increase to return to the original value. However, a 50% decrease followed by a 50% increase results in a 25% decrease from the original value — $75. This is misleading, so we apply normalization.
+
+### Formula
+
+The formula for normalization is as follows:
+
+```
+let a be the original value
+let b be the new value
+
+sort a and b such that a >= b
+
+return (a - b) / b
+```
+
+Note: When the smaller value is zero and the larger value is non-zero, an update is always required.
+
+In the above example, a 50% decrease from $100 to $50 would be normalized to 100%. A normalized 100% increase would return the original value of $100.
