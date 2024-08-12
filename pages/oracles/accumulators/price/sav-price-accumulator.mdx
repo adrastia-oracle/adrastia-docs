@@ -28,7 +28,7 @@ The Single Asset Vault (SAV) Price Accumulator oracle is an extension of [`Price
 
 ## Functionality
 
-The functionality of the SAV Price Accumulator is identical to the [`PriceAccumulator`](/oracles/accumulators/price) oracle, with the exception that implements `fetchPrice` to track the price of ERC4626 vault share tokens.
+The functionality of the SAV Price Accumulator is identical to the [`PriceAccumulator`](/oracles/accumulators/price) oracle, with the exception that it implements `fetchPrice` to track the price of ERC4626 vault share tokens.
 
 This oracle relies on an external oracle (`underlyingAssetOracle`) to provide the price of the underlying asset of the vault. This oracle reads the vault's total asset balance (`totalAssets`), multiplies this by the price of the underlying asset, then divides the total value of the vault by the vault's total supply (`totalSupply`) to calculate the price per share.
 
