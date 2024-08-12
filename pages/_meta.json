@@ -3,7 +3,8 @@
   "user-docs": "User Docs",
   "data-feeds": "Data Feeds",
   "prudentia": "Prudentia",
-  "contracts": "Contracts",
+  "oracles": "Oracles",
+  "strategies": "Strategies",
   "misc": "Misc",
   "security": "Security"
 }
