@@ -32,6 +32,10 @@ The functionality of the SAV Price Accumulator is identical to the [`PriceAccumu
 
 This oracle relies on an external oracle (`underlyingAssetOracle`) to provide the price of the underlying asset of the vault. This oracle reads the vault's total asset balance (`totalAssets`), multiplies this by the price of the underlying asset, then divides the total value of the vault by the vault's total supply (`totalSupply`) to calculate the price per share.
 
+## Limitations
+
+This accumulator uses its own heart beat (`heartbeat`) as the maximum observation age of the underlying asset oracle. This means that the underlying asset oracle must have a heart beat that is less than or equal to the SAV Price Accumulator's heart beat.
+
 ## Permissions
 
 Like most of our contracts, it's recommended to use the managed version of the SAV Price Accumulator to manage the configuration and permissions of the contract.
