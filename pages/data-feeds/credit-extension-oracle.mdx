@@ -134,7 +134,7 @@ The following steps are required to integrate a Credit Extension Oracle into a l
 
 ### Integration code
 
-Our [`IPriceOracle`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/interfaces/IPriceOracle.sol) interface should be used to integrate the Credit Extension Oracle into your protocol. If you'd like to use Chainlink's `AggregatorV3Interface` instead, you are free to deploy our [`AdrastiaPoweredPriceOracle`](https://github.com/adrastia-oracle/adrastia-periphery/blob/development/contracts/compatibility/AdrastiaPoweredPriceOracle.sol) contract that wraps the Credit Extension Oracle to provide the same interface as Chainlink's. See below for deployment instructions.
+Our [`IPriceOracle`](https://github.com/adrastia-oracle/adrastia-core/blob/main/contracts/interfaces/IPriceOracle.sol) interface should be used to integrate the Credit Extension Oracle into your protocol. If you'd like to use Chainlink's `AggregatorV3Interface` instead, you are free to deploy our [`AdrastiaPoweredPriceOracle`](https://github.com/adrastia-oracle/adrastia-periphery/blob/main/contracts/compatibility/AdrastiaPoweredPriceOracle.sol) contract that wraps the Credit Extension Oracle to provide the same interface as Chainlink's. See below for deployment instructions.
 
 #### Reading from IPriceOracle
 
@@ -174,7 +174,7 @@ There are two functions for reading prices from the Credit Extension Oracle:
 
 #### Deploying and reading from AdrastiaPoweredPriceOracle
 
-If you'd like to use Chainlink's `AggregatorV3Interface` instead of our `IPriceOracle` interface, you can deploy our [`AdrastiaPoweredPriceOracle`](https://github.com/adrastia-oracle/adrastia-periphery/blob/development/contracts/compatibility/AdrastiaPoweredPriceOracle.sol) contract that wraps the Credit Extension Oracle to provide the same interface as Chainlink's.
+If you'd like to use Chainlink's `AggregatorV3Interface` instead of our `IPriceOracle` interface, you can deploy our [`AdrastiaPoweredPriceOracle`](https://github.com/adrastia-oracle/adrastia-periphery/blob/main/contracts/compatibility/AdrastiaPoweredPriceOracle.sol) contract that wraps the Credit Extension Oracle to provide the same interface as Chainlink's.
 
 The constructor takes four arguments:
 
