@@ -1,0 +1,71 @@
+---
+title: Pyth Price Feed Updater | Automatos
+description: Credit Extension Oracles are purpose-built for lending protocols to extend credit — slowly. Read about how they enhance the security of DeFi lending protocols.
+---
+
+import { Callout } from 'nextra/components';
+
+# Pyth Price Feed Updater
+
+## Purpose
+
+The Pyth Price Feed Updater is designed to fulfill the essential role of updating Pyth price feeds in your decentralized application. While Pyth officially updates some feeds themselves, most Pyth price feeds require an external service to ensure that they remain current and accurate. This updater service handles that responsibility, automatically retrieving the latest price data from the Pyth network and updating your application’s price feeds accordingly. By doing so, it ensures that your smart contracts have access to the most up-to-date price information, reducing the need for manual updates and helping to maintain the reliability and accuracy of your financial operations.
+
+## Overview
+
+Our Pyth Price Feed Updater is a managed white-glove solution utilizing the same network that's used to update our oracles.
+
+## Configuration
+
+### Feed-specific
+
+Every price feed supports updates based on either:
+1. The price changing by at least the specified threshold (See [Update Thresholds](/misc/update-thresholds))
+2. The heartbeat period being met (i.e. requiring at least one update every so often)
+
+Every feed also supports confirmation periods and delays. I.e. Only perform an update if it's been needed for over a set amount of time.
+
+### Gas spend
+
+A variety of gas-related parameters can be adjusted, or we can tune them for you.
+
+For those looking for controls on cost or performance, the following parameters can be adjusted:
+- Min gas price
+- Max gas price
+- Transaction types
+- Gas price multipliers
+- EIP-1559 related parameters:
+  - Base fee multipliers
+  - Tip multipliers
+  - Custom gas pricing algorithm parameters:
+    - Percentile
+    - Number of historical blocks to consider in the algorithm
+- And more!
+
+If more controls are needed, feel free to reach out!
+
+## Analytics
+
+We provide two ways to analyze performance of your managed service:
+1. A data analytics dashboard
+2. An uptime monitoring and alerting app
+
+### Data analytics
+
+We provide clients with a Datadog-powered Automatos Worker Dashboard like so:
+
+![Automatos worker dashboard](/images/pyth-price-feed-updater-analytics.png)
+
+### Uptime monitoring
+
+In addition to our standard [Uptime](https://status.adrastia.io) uptime app, we can provide a status page that's specific to your service.
+
+## Supported Chains
+
+We support any EVM chain that has access to reliable RPC providers. Automatos is currently running on 20+ chains. 
+
+## Pricing
+
+We charge $200/month plus gas for 1 to 100 price feeds and monitoring at a frequency of every 1 second.
+
+We accept crypto (preferred), credit card, and PayPal.
