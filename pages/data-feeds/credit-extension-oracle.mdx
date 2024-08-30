@@ -73,7 +73,7 @@ The following chart shows a simplified version of the update flow for a Credit E
 ```mermaid
 flowchart TB
     A(["Anyone (Automatos Worker)"]) -- "update(token)" --> B["Credit Extension Oracle \n (ManagedCurrentAggregatorOracle)"]
-    B -- "consult(token)" --> C["Liquidation Oracle \n (ChainlinkOracleView)"]
+    B -- "consult(token)" --> C["Liquidation Oracle"]
     B -- "consult(token)" --> D["Median Filtered Daily Average Oracle \n (ManagedMedianFilteringOracle)"]
     C -- Price Data --> E{Collect data}
     D -- Price & Liquidity Data --> E
@@ -102,7 +102,7 @@ Provided that updates are not paused (by the admin) and the update trigger condi
 
 First and foremost, the Credit Extension Oracle design requires integrating protocols to make use of at least three different oracles:
 
-1. A liquidation oracle (e.g., Chainlink)
+1. A liquidation oracle (e.g., Pyth, Chainlink)
 
 - This oracle is used when petforming liquidations to value a borrower's collateral as well as debts. It should be aggressive and responsive to price changes to prevent under-collateralized loans that can lead to bad debt.
 
