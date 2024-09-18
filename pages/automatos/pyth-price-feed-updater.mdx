@@ -89,6 +89,38 @@ Externally, see the [Data analytics](#data-analytics) section.
 
 ## Pricing
 
-We charge $200/month plus gas for 1 to 100 price feeds and monitoring at a frequency of every 1 second.
+We charge a monthly fee based on monitoring frequency and chain, supporting up to 100 price feeds per chain. Gas costs are not included, but we don't charge a gas price premium. See the table below for more details.
+
+| Chain        | Monitoring frequency | Price      | Gas price premium |
+| ------------ | -------------------- | ---------- | ----------------- |
+| Ethereum     | 3 seconds            | $100/month | None              |
+| Arbitrum One | 200 milliseconds     | $800/month | None              |
+| Other chains | 1 second             | $200/month | None              |
 
 We accept crypto (preferred), credit card, and PayPal.
+
+## Process
+
+We're currently working on a decentralized, permissionless system for managing this service. In the meantime, we've made the manual integration process as simple as possible.
+
+1. Reach out to us via email ([support@adrastia.io](mailto:support@adrastia.io)) or [Discord](https://discord.adrastia.io).
+2. Provide us with the price feed IDs on each chain you'd like us to manage.
+3. We'll create a private (or public) Github repository for you to view the configuration and suggest changes.
+4. We'll send you a Service Agreement to sign.
+5. We'll provide you with a set of Automatos worker addresses for you to fund with gas.
+6. We'll start the service and provide you with access to a [Data analytics](#data-analytics) dashboard.
+7. We'll provide you with a status page for your service.
+8. We'll bill you at the end of the month.
+
+### Terms
+
+In addition to guaranteeing we'll maintain the [Technical details](#technical-details) of the service, we also guarantee the following:
+
+1. We offer an SLA of 99.99% uptime.
+2. Any unused gas funds will be returned upon request or termination of the serive.
+3. Either party may terminate the service by providing 60 days notice.
+4. We'll optimize the use of gas funds to ensure efficient operation of the service.
+5. We're not responsible for any losses incurred due to service downtime, chain downtime, Pyth network downtime or errors, or any other issues outside of our control.
+6. While most uptimes occur within a few blocks of being required, we guarantee that updates will occur within one minute.
+
+This list of guarantees is not exhaustive, but it should give you a good idea of what to expect. The full list of terms will be provided in our Service Agreement.
