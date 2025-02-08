@@ -24,7 +24,9 @@ Every price feed supports updates based on either:
 1. The price changing by at least the specified threshold (See [Update Thresholds](/misc/update-thresholds))
 2. The heartbeat period being met (i.e. requiring at least one update every so often)
 
-Every feed also supports confirmation periods and delays. I.e. Only perform an update if it's been needed for over a set amount of time.
+Additionally, every feed also supports early update conditions as an extension of the above criteria. When one feed requires an update based on the regular criteria, additional criteria can be applied to preemptively update other specified price feeds. This early update mechanism saves gas by reducing the amount of update transactions, with the cost savings rooted in performing a minimal amount of proof validations.
+
+Finally, every feed also supports confirmation periods and delays. I.e. Only perform an update if it's been needed for over a set amount of time.
 
 ### Gas spend
 
