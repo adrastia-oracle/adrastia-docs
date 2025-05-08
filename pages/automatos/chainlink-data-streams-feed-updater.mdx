@@ -1,0 +1,134 @@
+---
+title: Chainlink Data Streams Feed Updater | Automatos v0
+description: Adrastia's Chainlink Data Streams Feed Updater is designed to fulfill the essential role of updating Chainlink Data Streams feeds for your decentralized application.
+---
+
+import { Callout } from 'nextra/components';
+
+# Chainlink Data Streams Feed Updater
+
+## Purpose
+
+The Chainlink Data Streams Feed Updater is designed to fulfill the essential role of updating Chainlink Data Streams feeds for your decentralized application. Chainlink Data Streams feeds require an external service to ensure that they remain current and accurate. This updater service handles that responsibility, automatically retrieving the latest price data from Chainlink and updating your application’s price feeds accordingly. By doing so, it ensures that your smart contracts have access to the most up-to-date price information, helping to maintain the reliability and accuracy of your financial operations.
+
+While it's possible to run your own service, Adrastia offers a battle-tested, geographically decentralized, redundant system to offer industry-leading reliability and performance. When it comes to running large-scale financial infrastructure, downtime is costly. Leverage Adrastia to ensure your financial application never skips a beat.
+
+## Overview
+
+Our Chainlink Data Streams Feed Updater is a managed white-glove solution that updates your Chainlink price feeds with industry-leading reliability, accuracy, and speed. We've extended our battle-tested software and infrastructure to build a custom Chainlink Data Streams feed updater that sets the standard.
+
+## Configuration
+
+### Feed-specific
+
+Every price feed supports updates based on either:
+
+1. The price changing by at least the specified threshold (See [Update Thresholds](/misc/update-thresholds))
+2. The heartbeat period being met (i.e. requiring at least one update every so often)
+
+Additionally, every feed also supports early update conditions as an extension of the above criteria. When one feed requires an update based on the regular criteria, additional criteria can be applied to preemptively update other specified price feeds. This early update mechanism saves gas by reducing the amount of update transactions.
+
+Finally, every feed also supports confirmation periods and delays. I.e. Only perform an update if it's been needed for over a set amount of time.
+
+### Gas spend
+
+A variety of gas-related parameters can be adjusted, or we can tune them for you.
+
+For those looking for controls on cost or performance, the following parameters can be adjusted:
+
+- Min gas price
+- Max gas price
+- Transaction types
+- Gas price multipliers
+- EIP-1559 related parameters:
+  - Base fee multipliers
+  - Tip multipliers
+  - Custom gas pricing algorithm parameters:
+    - Percentile
+    - Number of historical blocks to consider in the algorithm
+- And more!
+
+If more controls are needed, feel free to reach out!
+
+## Analytics
+
+We provide two ways to analyze performance of your managed service:
+
+1. A data analytics dashboard
+2. An uptime monitoring and alerting app
+
+### Data analytics
+
+We provide clients with a Datadog-powered Automatos Worker Dashboard like so:
+
+![Automatos worker dashboard - KPIs](/images/chainlink-data-streams-feed-updater-analytics.png)
+
+![Automatos worker dashboard - feed updates](/images/chainlink-data-streams-feed-updater-analytics-2.png)
+
+Note that these images are non-encompassing.
+
+### Uptime monitoring
+
+In addition to our standard [Uptime](https://status.adrastia.io) uptime app, we can provide a status page that's specific to your service.
+
+## Supported Chains
+
+We support any EVM chain that has access to reliable RPC providers. Automatos is currently running on 20+ chains.
+
+## Technical details
+
+### Server fleet
+
+We're currently running a fleet of four geographically-distributed high-end dedicated servers to protect against server, local, and regional outages. These are located in New York, Miami, Oslo, and Zurich. We protect against company-wide outages by using a mix of three different providers.
+
+### RPC nodes
+
+We've built a custom [Ethers v6 Fallback Provider](https://github.com/adrastia-oracle/ethers-v6-fallback-provider) to allow our service to continue running even if one of our RPC providers goes down. This is a critical feature for ensuring that our service remains operational even in the face of unexpected issues.
+
+Each of our worker nodes use a different configuration of RPC providers to prevent a single faulty provider from causing an outage. Up to eight providers are currently used depending on the chain, including reliable providers like Alchemy, Infura, and DRPC.
+
+Advanced features like provider health checks and automatic failover are used to ensure minimal latency and maximum uptime.
+
+### Monitoring
+
+Internally, we rely on a mix of Datadog and Betterstack to monitor our service. If something goes wrong, someone from our team is alerted immediately and can take action to resolve the issue. We're committed to having someone available 24/7 365 days a year to ensure that our service remains operational with near 100% uptime, even if that means that our founder can't take a break.
+
+Externally, see the [Data analytics](#data-analytics) section.
+
+## Pricing
+
+We charge a monthly fee based on monitoring frequency and chain, supporting up to 100 price feeds per chain. Gas costs are not included, but we don't charge a gas price premium. See the table below for more details.
+
+| Block time   | Example chain | Chain monitoring frequency | Price       | Gas price premium |
+| ------------ | ------------- | -------------------------- | ----------- | ----------------- |
+| 10+ seconds  | Etthereum     | 2 seconds                  | $500/month  | None              |
+| 2-10 seconds | Optimism      | 500 milliseconds           | $750/month  | None              |
+| \< 2 seconds | Arbitrum One  | 200 milliseconds           | $1000/month | None              |
+
+We accept crypto (preferred), credit card, and PayPal.
+
+## Process
+
+We're currently working on a decentralized, permissionless system for managing this service. In the meantime, we've made the manual integration process as simple as possible.
+
+1. Reach out to us via email ([support@adrastia.io](mailto:support@adrastia.io)) or [Discord](https://discord.adrastia.io).
+2. Provide us with the price feed IDs on each chain you'd like us to manage.
+3. We'll create a private (or public) Github repository for you to view the configuration and suggest changes.
+4. We'll send you a Service Agreement to sign.
+5. We'll provide you with a set of Automatos worker addresses for you to fund with gas.
+6. We'll start the service and provide you with access to a [Data analytics](#data-analytics) dashboard.
+7. We'll provide you with a status page for your service, at your request.
+8. We'll bill you at the end of the month.
+
+### Terms
+
+In addition to guaranteeing we'll maintain the [Technical details](#technical-details) of the service, we also guarantee the following:
+
+1. We offer an SLA of 99.99% uptime.
+2. Any unused gas funds will be returned upon request or termination of the serive.
+3. Either party may terminate the service by providing 60 days notice.
+4. We'll optimize the use of gas funds to ensure efficient operation of the service.
+5. We're not responsible for any losses incurred due to service downtime, chain downtime, Chainlink network downtime or errors, or any other issues outside of our control.
+6. While most uptimes occur within a few blocks of being required, we guarantee that updates will occur within one minute.
+
+This list of guarantees is not exhaustive, but it should give you a good idea of what to expect. The full list of terms will be provided in our Service Agreement.
