@@ -1,0 +1,28 @@
+---
+title: Oracle Mutation Computer | Prudentia
+description: A Prudentia computer that computes mutated values for ERC20 tokens with decimal scaling, sourced from an oracle.
+---
+
+import { Cards } from 'nextra/components';
+import { GitHubIcon } from '@components/icons';
+
+# Oracle Mutation Computer
+
+<Cards>
+  <Cards.Card
+    icon={<GitHubIcon />}
+    title="Base Contract"
+    href="https://github.com/adrastia-oracle/adrastia-periphery/blob/main/contracts/rates/computers/OracleMutationComputer.sol"
+    target="_blank"
+  />
+  <Cards.Card
+    icon={<GitHubIcon />}
+    title="Managed Contract"
+    href="https://github.com/adrastia-oracle/adrastia-periphery/blob/main/contracts/rates/computers/ManagedOracleMutationComputer.sol"
+    target="_blank"
+  />
+</Cards>
+
+## Purpose
+
+Oracle Mutation Computers are smart contracts that extend the [ERC20 Mutation Computer](./erc20-mutation-computer) to retrieve values from an oracle and compute mutated values for ERC20 tokens, with decimal trimming and scaling.
