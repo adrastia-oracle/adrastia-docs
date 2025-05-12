@@ -5,7 +5,6 @@ const withNextra = nextra({
 });
 
 export default withNextra({
-  // any other next.js config
   output: 'export',
   images: {
     unoptimized: true,
@@ -20,20 +19,11 @@ export default withNextra({
       test: /\.svg$/,
       oneOf: [
         {
-          resourceQuery: /svgr/,
           use: ['@svgr/webpack'],
         },
         imageLoaderOptions,
       ],
     });
     return config;
-  },
-  turbopack: {
-    rules: {
-      './components/icons/*.svg': {
-        loaders: ['@svgr/webpack'],
-        as: '*.js',
-      },
-    },
   },
 });
