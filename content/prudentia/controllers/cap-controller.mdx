@@ -57,12 +57,12 @@ The following chart shows a simplified version of the update flow for an Adrasti
 ```mermaid
 flowchart TB
     A(["Anyone (Automatos Worker)"]) -- "update(token)" --> B["Cap Controller"]
-    B  -- Check if the update conditions are met --> M{"1. There are valid configurations for the token\n2. The controller is not paused for the token\n3. The configured period has elapsed\n4. The computed cap has changed by more than\nthe configured threshold"}
+    B  -- Check if the update conditions are met --> M{"1 - There are valid configurations for the token<br>2 - The controller is not paused for the token<br>3 - The configured period has elapsed\n4 - The computed cap has changed by more than\nthe configured threshold"}
     M -- Yes --> N{"Perform update"}
     M -- No --> O["Do nothing"]
     N -- "computeRate(token)" --> C["Cap Computer"]
     C -- New cap (unclamped) --> E{"Clamp the cap"}
-    E -- New cap (clamped) --> J[("Store the data:\n - Cap\n - Unclamped cap\n - Timestamp")]
+    E -- New cap (clamped) --> J[("Store the data:<br>- Cap<br>- Unclamped cap<br>- Timestamp")]
 ```
 
 ### Clamping logic
@@ -89,14 +89,14 @@ The standard cap Controller uses OpenZeppelin's [AccessControlEnumerable](https:
 
 ```mermaid
 flowchart TB
-    A(["Admin\n - Can manually push caps"])
-    A --> B(["Rate Admin\n - Can set the rate control (clamping) parameters"])
-    A --> C(["Update Pause Admin\n - Can pause and unpause the controller"])
+    A(["Admin<br>- Can manually push caps"])
+    A --> B(["Rate Admin<br>- Can set the rate control (clamping) parameters"])
+    A --> C(["Update Pause Admin<br>- Can pause and unpause the controller"])
 ```
 
 ```mermaid
 flowchart TB
-    D(["Updater Admin"]) --> E(["Updater\n - Can update the controller (can be open to anyone)"])
+    D(["Updater Admin"]) --> E(["Updater<br>- Can update the controller (can be open to anyone)"])
 ```
 
 Note that all roles can manage the roles below them. Roles without a role above them are able to manage themselves.
