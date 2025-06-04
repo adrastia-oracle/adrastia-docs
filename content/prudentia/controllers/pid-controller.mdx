@@ -73,7 +73,7 @@ The following chart shows a simplified version of the update flow for an Adrasti
 ```mermaid
 flowchart TB
     A(["Anyone (Automatos Worker)"]) -- "update(token)" --> B["PID Controller"]
-    B  -- Check if the update conditions are met --> M{"1. There are valid configurations for the token\n2. The controller is not paused for the token\n3. The configured period has elapsed"}
+    B  -- Check if the update conditions are met --> M{"1 - There are valid configurations for the token<br>2 - The controller is not paused for the token<br>3 - The configured period has elapsed"}
     M -- Yes --> N{"Perform update"}
     M -- No --> O["Do nothing"]
     N -- "consult(token)" --> C["Input and Error Oracle"]
@@ -82,7 +82,7 @@ flowchart TB
     F -- PID terms --> G{"Clamp the integral term"}
     G -- PID terms --> H{"Compute the PID output"}
     H -- PID output --> I{"Clamp the PID output"}
-    I -- PID output --> J[("Store the data:\n - PID output\n - Unclamped PID output\n - Integral\n - Input (transformed)\n - Error (transformed)\n - Timestamp")]
+    I -- PID output --> J[("Store the data:<br>- PID output<br>- Unclamped PID output<br>- Integral<br>- Input (transformed)<br>- Error (transformed)<br>- Timestamp")]
 ```
 
 ## Permissions
@@ -93,14 +93,14 @@ The standard PID Controller uses OpenZeppelin's [AccessControlEnumerable](https:
 
 ```mermaid
 flowchart TB
-    A(["Admin\n - Can manually push rates\n - Can increase the historical rates buffer size"])
-    A --> B(["Rate Admin\n - Can set the rate control and PID parameters"])
-    A --> C(["Update Pause Admin\n - Can pause and unpause the controller"])
+    A(["Admin<br>- Can manually push rates<br>- Can increase the historical rates buffer size"])
+    A --> B(["Rate Admin<br>- Can set the rate control and PID parameters"])
+    A --> C(["Update Pause Admin<br>- Can pause and unpause the controller"])
 ```
 
 ```mermaid
 flowchart TB
-    D(["Updater Admin"]) --> E(["Updater\n - Can update the controller (can be open to anyone)"])
+    D(["Updater Admin"]) --> E(["Updater<br>- Can update the controller (can be open to anyone)"])
 ```
 
 Note that all roles can manage the roles below them. Roles without a role above them are able to manage themselves.
