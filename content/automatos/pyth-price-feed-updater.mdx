@@ -93,20 +93,23 @@ Externally, see the [Data analytics](#data-analytics) section.
 
 ## Pricing
 
-We charge a monthly fee based on monitoring frequency and the number of feeds. The base package includes monitoring for up to 10 feeds at no additional charge.
+We charge a monthly fee based on the number of monitored feeds **per blockchain**. Pricing is tiered, meaning each tier applies only to the feeds within its range.
 
-Gas costs are **not** included in the pricing, but we do **not** charge any gas price premium. See the table below for details.
+Gas costs are **not** included in the pricing, but we do **not** charge any gas price premium.
 
-| Block time   | Chain monitoring frequency | Offchain report monitoring frequency | Base price | Additional feeds (beyond 10) | Gas price premium |
-| ------------ | -------------------------- | ------------------------------------ | ---------- | ---------------------------- | ----------------- |
-| 2+ seconds   | 500 milliseconds           | 100 milliseconds                     | $500/month | $25/month per feed           | None              |
-| \< 2 seconds | 200 milliseconds           | 10 milliseconds                      | $750/month | $25/month per feed           | None              |
+The following table describes the pricing per blockchain:
 
-<Callout emoji="🚀">
-  Launching a new chain? Ask us about **launch credits** to help reduce your initial costs.
-</Callout>
+| Feed range   | Price per feed per month |
+| ------------ | ------------------------ |
+| Feeds 1 – 5  | $75                      |
+| Feeds 6 – 10 | $50                      |
+| Feeds 11 +   | $25                      |
 
-We accept crypto (preferred), credit card, and PayPal.
+For example, monitoring 5 feeds on Arbitrum and 8 feeds on Base would cost:
+
+- Arbitrum: (5 × $75) = $375
+- Base: (5 × $75) + (3 × $50) = $525
+- **Total:** $900/month
 
 ## Process
 
